@@ -11,8 +11,14 @@ int main() {
 	cout.tie(0);
 
 	int t;
-	t = 2 + 5 * 3 / 4 + 1 * 2 - 5 / 2;
-	cout << t;
+	cin >> t;
+	while (t--) {
+		int r;
+		cin >> r;
+		int o, f, e, i, h, w;
+		cin >> o >> f >> e >> i >> h >> w;
+		int sum = o + f +
+	}
 
 	return 0;
 }

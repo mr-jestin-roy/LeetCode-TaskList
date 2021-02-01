@@ -1,4 +1,5 @@
 # LeetCode-TaskList
+<img align='center' src="https://miro.medium.com/max/800/1*bOxDNmWX_nL4W4qB-ey0VQ.gif" width="250">
 ## 1)All my submissions on leetcode
 Looking for Completing all the problems from:
 [Shortlisted LeetCode Problems](https://docs.google.com/spreadsheets/d/1SbpY-04Cz8EWw3A_LBUmDEXKUMO31DBjfeMoA0dlfIA/htmlview?sle=true#)

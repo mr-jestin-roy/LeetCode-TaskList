@@ -1,8 +1,9 @@
 # LeetCode-TaskList
 
 <img align='left' src="https://miro.medium.com/max/800/1*bOxDNmWX_nL4W4qB-ey0VQ.gif" width="250">
+<img align='right' src="https://miro.medium.com/max/800/1*bOxDNmWX_nL4W4qB-ey0VQ.gif" width="250">
 <img align='center' src="https://i.pinimg.com/originals/81/52/58/81525851413fac11dca44e57076b396a.gif" width="250">
-<img align='left' src="https://miro.medium.com/max/800/1*bOxDNmWX_nL4W4qB-ey0VQ.gif" width="250">
+
 
 ## Working on completing my Coding Ninjas Course Work
 

@@ -40,6 +40,10 @@ Node *takeInput() {
 	return head;
 }
 
+
+// HERE BEGINNING MEANS AFTER TAIL->NEXT.
+// HERE LAST MEANS BEFORE HEAD.
+
 Node* insertNode(Node *head, int i, int data) {
 	Node *newNode = new Node(data);
 	int count = 0;
@@ -51,7 +55,7 @@ Node* insertNode(Node *head, int i, int data) {
 	}
 	​										//Case 2: Insert node at the beginning
 	while (temp != NULL && count < i - 1) {
-		​
+		// ​						For traversal
 		temp = temp -> next;
 		count++;
 	}
@@ -63,4 +67,32 @@ Node* insertNode(Node *head, int i, int data) {
 	}
 	return head;
 //Returns the new head pointer after insertion
+}
+
+Node* deleteNode(Node *head, int position) {
+	int pos = 0;
+	Node *ptr = head;
+	Node *prev = NULL;
+
+	if (position == 0) {
+		head  = head ->next;
+		delete (ptr);
+	}
+	else {
+
+		while (position != pos) {
+			++pos;
+			prev = ptr;
+			ptr = ptr->next;
+			if (prev->next == NULL) {
+				return head;
+			}
+		}
+
+		if (ptr != NULL) {
+			prev->next = ptr->next;
+			delete (ptr);
+		}
+	}
+	return head;
 }

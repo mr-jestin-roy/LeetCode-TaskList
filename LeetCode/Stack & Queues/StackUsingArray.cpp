@@ -1,7 +1,7 @@
 #include <climits>
 
 template <typename T>
-
+// USING TEMPLATE TO CREATE A GENERIC STATCK
 class StackUsingArray {
 	T *data;
 	int nextIndex;

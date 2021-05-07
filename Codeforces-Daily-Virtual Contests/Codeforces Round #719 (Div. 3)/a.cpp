@@ -4,29 +4,32 @@ using namespace std;
 #define mod 1000000007
 #define ll long long int
 
-bool perfectSquare(int k) {
-	for (int i = 1; i * i <= k; i++) {
-		if (i * i == k)
-			return true;
-	}
-	return false;
-}
+
 
 void solve() {
 	int n;
 	cin >> n;
-	int flag = 0;
-	string s;
-	cin >> s;
-	for (int i = 0; i < s.length(); i++)
+	string s;	cin >> s;
+	for (char c = 'A'; c <= 'Z'; c++)
 	{
-		for (int j = 0; j < s.length(); j++)
+		int first = n, last = -1;
+		for (int i = 0; i < n; i++) {
+			if (s[i] == c)
+			{
+				first = min(first, i);
+				last = max(last, i);
+			}
+		}
+		for (int i = first; i <= last; i++)
 		{
-			if (s[i] == s[j])
-				flag = 1;
+			if (s[i] != c)
+			{
+				cout << "NO" << endl;
+				return;
+			}
 		}
 	}
-	cout << h.size() << endl;
+	cout << "YES" << endl;
 
 }
 

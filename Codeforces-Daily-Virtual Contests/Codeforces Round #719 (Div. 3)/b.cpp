@@ -15,15 +15,16 @@ bool perfectSquare(int k) {
 void solve() {
 	int n;
 	cin >> n;
-	int count = 0;
+	int ans = 0;
 	for (int i = 1; i <= 9; i++)
 	{
-		for (int x = 1; x <= 9; x++)
-		{
-			count += stoi(string(i, '0' + x)) <= n;
+		int temp = i;
+		while (temp <= n) {											//example
+			temp = temp * 10 + i;
+			ans++;
 		}
 	}
-	cout << count << endl;
+	cout << ans << endl;
 }
 
 int32_t main() {

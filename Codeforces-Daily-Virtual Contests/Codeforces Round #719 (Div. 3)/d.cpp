@@ -15,19 +15,18 @@ bool perfectSquare(int k) {
 void solve() {
 	int n;
 	cin >> n;
-	int a[n];
-	for (int i = 0; i < n; i++)
-		cin >> a[i];
-	int count = 0;
+	map<int, int> mp;
 	for (int i = 0; i < n; i++)
 	{
-		for (int j = 0; j < n; j++)
-		{
-			if (a[j] - a[i] == j - i && i < j)
-				count++;
-		}
+		int x;
+		cin >> x;
+		mp[x - i]++;
 	}
-	cout << count << endl;
+	int totalPairs = 0;
+	for (auto i : mp)
+	{	totalPairs += (i.second) * (i.second - 1) / 2;
+	}
+	cout << totalPairs << endl;
 }
 
 int32_t main() {

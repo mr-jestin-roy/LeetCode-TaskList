@@ -3,7 +3,8 @@
 using namespace std;
 void solve()
 {
-	int n,k1,k2;	cin>>n>>k1>>k2;
+	int n,k1,k2;	
+	cin>>n>>k1>>k2;
 	int w,b;
 	cin>>w>>b;
 	if(k1+k2 < 2){

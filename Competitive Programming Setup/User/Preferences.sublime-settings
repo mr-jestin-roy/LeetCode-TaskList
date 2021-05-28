@@ -1,0 +1,13 @@
+{
+	"color_scheme": "Packages/Material Theme/schemes/Material-Theme-Darker.tmTheme",
+	"font_size": 10,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"material_theme_accent_acid-lime": true,
+	"material_theme_big_fileicons": true,
+	"material_theme_bullet_tree_indicator": true,
+	"material_theme_tree_headings": true,
+	"theme": "Material-Theme-Darker.sublime-theme"
+}

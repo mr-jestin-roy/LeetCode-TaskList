@@ -9,26 +9,30 @@ using ll = long long;
 #define PI 3.14159265358979323846
 #define endl "\n"
 
+// ANOTHER METHOD USING PRIORITY QUEUE
 void solve(){
-        int n;
-        cin>>n;
-        int a[n];
-        for(int i=0;i<n;i++){
-            cin>>a[i];
+    int N;
+    cin >> N;
+    priority_queue<int, vector<int>, greater<int>> pq;
+    int64_t sum = 0;
+    int potions = 0;
+ 
+    for (int i = 0; i < N; i++) {
+        int a;
+        cin >> a;
+        sum += a;
+        pq.push(a);
+        potions++;
+ 
+        while (sum < 0) {
+            sum -= pq.top();
+            pq.pop();
+            potions--;
         }
-        sort(a,a+n);
-        int ans = 0;
-        int sum = 0;
-        for(int i=n-1;i>=0;i--){
-            if((sum+a[i])>=0){
-                sum += a[i];
-                ans++;
-                
-            }
-        }
-        cout<<ans<<endl;
+    }
+ 
+    cout << potions << '\n';
 }
-
 int32_t main()
 {
     fast;

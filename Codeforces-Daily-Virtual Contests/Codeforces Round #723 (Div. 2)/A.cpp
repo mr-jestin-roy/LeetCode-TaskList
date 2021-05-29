@@ -19,27 +19,20 @@ int32_t main()
 #endif
     ll t = 1;
     cin >> t;
-    int i=0;
     while (t--)
     {
         int n;
         cin>>n;
-        int digit =0;
-        // while(n>0){
-        //     digit++;
-        //     n/=10;
-        // }
-        for (int i = 1; i <= n; i = (i*10 +1)) {
-            digit = i;
-        
+        int a[2*n];
+        for(int i=0;i<2*n;i++){
+            cin>>a[i];
         }
-        while(n>11){
-            n = n%digit;
-            digit/=10;
+        sort(a,a+2*n);
+        int i=0;
+        int j = 2*n - 1;
+        for(int k =0;k<n;k++){
+            cout<<a[i++]<<" "<<a[j--]<<" ";
         }
-        if(n==0)
-            cout<<"YES"<<endl;
-        else
-            cout<<"NO"<<endl;
+        cout<<endl;
     }
 }

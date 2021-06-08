@@ -16,22 +16,22 @@ int gcd(int a, int b)
 
 void solve()
 {
-    int n;
-    cin >> n;
-    vector<int> a(n);
-    for (int &x : a)
-        cin >> x;
-    sort(a.begin(), a.end(), [](int x, int y)
-         { return x % 2 < y % 2; });
-    int ans = 0;
-    for (int i = 0; i < n; ++i)
+    string s;
+    cin >> s;
+    int n = s.size();
+    ll ans = 0;
+    for (int i = 0, j1 = 0, j2 = 0; i < n; ++i)
     {
-        for (int j = i + 1; j < n; ++j)
-        {
-            ans += __gcd(a[i], a[j] * 2) > 1;
-        }
+        j1 = max(j1, i);
+        j2 = max(j2, i);
+        while (j1 < n && (s[j1] == '?' || s[j1] - '0' == j1 % 2))
+            ++j1;
+        while (j2 < n && (s[j2] == '?' || s[j2] - '0' == ((j2 + 1) % 2)))
+            ++j2;
+        ans += max(j1, j2) - i;
+        //cout << j1 << " " << j2 << "\n";
     }
-    cout << ans << endl;
+    cout << ans << "\n";
 }
 int main()
 {

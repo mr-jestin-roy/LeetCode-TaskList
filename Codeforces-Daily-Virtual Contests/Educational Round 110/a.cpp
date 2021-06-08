@@ -16,22 +16,25 @@ int gcd(int a, int b)
 
 void solve()
 {
-    int n;
-    cin >> n;
-    vector<int> a(n);
-    for (int &x : a)
-        cin >> x;
-    sort(a.begin(), a.end(), [](int x, int y)
-         { return x % 2 < y % 2; });
-    int ans = 0;
-    for (int i = 0; i < n; ++i)
+    int a, b, c, d;
+    cin >> a >> b >> c >> d;
+    if (max(a, b) > max(c, d))
     {
-        for (int j = i + 1; j < n; ++j)
+        if (min(a, b) > max(c, d))
         {
-            ans += __gcd(a[i], a[j] * 2) > 1;
+            cout << "NO" << endl;
+            return;
         }
     }
-    cout << ans << endl;
+    else
+    {
+        if (max(a, b) > min(c, d))
+        {
+            cout << "NO" << endl;
+            return;
+        }
+    }
+    cout << "YES" << endl;
 }
 int main()
 {

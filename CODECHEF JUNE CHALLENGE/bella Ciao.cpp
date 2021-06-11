@@ -11,21 +11,21 @@ using ll = long long;
 
 void solve()
 {
-    int total,d,p,q;
-    cin>>total>>d>>p>>q;
-    int n = total/d;
-    int sum = (d*n*(2*p + (n-1)*q))/2 + (total%d)*(p+ n*q);
+    int total, d, p, q;
+    cin >> total >> d >> p >> q;
+    int n = total / d;
+    int sum = (d * n * (2 * p + (n - 1) * q)) / 2 + (total % d) * (p + n * q);
 
-    cout<<sum<<endl;    
+    cout << sum << endl;
 }
 int32_t main()
-{	
+{
     fast;
 #ifndef ONLINE_JUDGE
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
 #endif
-   	int t = 1;
+    int t = 1;
     cin >> t;
     while (t--)
     {

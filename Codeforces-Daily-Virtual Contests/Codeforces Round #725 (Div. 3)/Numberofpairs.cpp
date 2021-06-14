@@ -15,20 +15,25 @@ using ll = long long;
 
 void solve()
 {
-    int n;
-    cin >> n;
+    int n,l,r;
+    cin >> n>>l>>r;
+
+
     vector<int> a(n);
-    for(auto &x:a) cin>>x;
-
-    int mn = min_element(all(a)) - a.begin(); 
-    int mx = max_element(all(a)) - a.begin();
-
-    int ans = max(mn,mx) +1;
-
-    ans = min(ans,max(n-mn-1,n-mx-1)+1); 
-    ans = min(ans,min(mn,mx)+1+min(n-mn-1,n-mx-1)+1);
-
-    cout<<ans<<endl; 
+    for(auto &x:a){
+         cin>>x;
+    }
+    sort(all(a));
+    int ans =0;
+    for(int i=0;i<n;i++){
+        int lx = l -a[i];
+        int rx = r -a[i];
+        ans += upper_bound(all(a),rx) - lower_bound(all(a),lx);
+        if(2*a[i]>=l && 2*a[i]<=r)
+            ans--;
+    }
+    ans/=2;
+    cout<<ans<<endl;
 }
 int32_t main()
 {

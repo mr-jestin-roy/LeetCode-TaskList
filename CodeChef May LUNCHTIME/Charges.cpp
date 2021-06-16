@@ -16,7 +16,9 @@ void solve()
     string s;
     cin >> s;
 
-    int ans = 0;
+    int ans = 0; //DISTANCE BETWEEN THE 0th & (n-1)th charge
+
+    //  INTIAL SPACING IN STRING OF CHARGES
     for (int i = 0; i < n - 1; i++)
     {
         if (s[i] == s[i + 1])
@@ -25,42 +27,40 @@ void solve()
             ans++;
     }
 
-    //modify according to the queries
-
     int i = 0;
-    while (k--)
+    while (k--) //only the storing the delta that was brought by each updation
     {
         int index;
         cin >> index;
         index--;
         s[index] = (s[index] == '0' ? '1' : '0');
-
-        if (index == 0)
+        //edge cases
+        if (index == 0) //leftmost element
         {
             if (index + 1 < n)
             {
                 if (s[index] == s[index + 1])
-                    ans++;
+                    ans++; //delta = +1;
                 else
                     ans--;
             }
         }
-        else if (index == n - 1)
+        else if (index == n - 1) //rightmost charge
         {
             if (index - 1 >= 0)
             {
                 if (s[index] == s[index - 1])
-                    ans++;
+                    ans++; //delta = +1;
                 else
                     ans--;
             }
         }
         else
         {
-            if (s[index - 1] == s[index + 1])
+            if (s[index - 1] == s[index + 1]) // in between charges
             {
                 if (s[index] == s[index - 1])
-                    ans += 2;
+                    ans += 2; //delta = +2;
                 else
                     ans -= 2;
             }

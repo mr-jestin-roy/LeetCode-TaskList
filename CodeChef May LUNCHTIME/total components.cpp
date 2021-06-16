@@ -1,3 +1,9 @@
+// You are given all N−1 integers in the range [2,N]. In each step, you choose 2 distinct integers and if they share a common factor greater than 1, you combine them into the same group. You keep doing it until no further merging is possible.
+
+// Belonging to a group is an equivalence relation. So if integers a and b are in the same group and integers b and c are in the same group, then integers a and c are also said to be in the same group.
+
+// Find the total number of groups formed in the end.
+
 // Created by Jestin Roy
 #include <bits/stdc++.h>
 using namespace std;

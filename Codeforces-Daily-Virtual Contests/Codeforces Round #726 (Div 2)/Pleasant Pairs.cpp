@@ -1,47 +1,50 @@
-// Created by Jestin Roy
 #include <bits/stdc++.h>
-using namespace std;
-using ll = long long;
-
-#define mod 1000000007
 #define int long long
-#define fast ios_base::sync_with_stdio(false), cin.tie(NULL)
-#define PI 3.14159265358979323846
-#define endl "\n"
-
-void solve()
-{
-    int n;
-    cin >> n;
-    vector<int> a(n + 1);
-    unordered_map<int,int> mpp;
-    for (int i = 1; i <= n; i++){
-        cin >> a[i];
-        mpp[a[i]] = i;
-    }
-    int cnt = 0;
-    for (int i = 1; i <= n; i++)
-    {
-        if (mpp.find(a[i] - mpp[a[i]]/a[]) != mpp.end())
-            {
-                ans.push_back(mpp[target - nums[i]]);
-                ans.push_back(i);
-                return ans;
-            }
-    }
-    cout << cnt << endl;
-}
+using namespace std;
+vector<int> factors[200005];
 int32_t main()
 {
-    fast;
-#ifndef ONLINE_JUDGE
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
-#endif
-    int t = 1;
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    for (int i = 1; i < 200005; i++)
+    {
+        for (int j = i; j < 200005; j += i)
+        {
+            factors[j].push_back(i);
+        }
+    }
+    int t;
     cin >> t;
     while (t--)
     {
-        solve();
+        int n;
+        cin >> n;
+        int a[n];
+        for (int i = 0; i < n; i++)
+        {
+            cin >> a[i];
+        }
+        map<int, int> rev;
+        for (int i = 0; i < n; i++)
+        {
+            rev[a[i]] = i + 1;
+        }
+        int ans = 0;
+        for (int i = 2; i <= 2 * n; i++)
+        {
+            for (auto x : factors[i])
+            {
+                //if(x*x>i){continue;}
+                if (rev.find(x) == rev.end() || rev.find(i / x) == rev.end())
+                {
+                    continue;
+                }
+                if (rev[x] + rev[i / x] == i && rev[x] < rev[i / x])
+                {
+                    ans++;
+                }
+            }
+        }
+        cout << ans << "\n";
     }
 }

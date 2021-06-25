@@ -8,24 +8,40 @@ using ll = long long;
 #define fast ios_base::sync_with_stdio(false), cin.tie(NULL)
 #define PI 3.14159265358979323846
 #define endl "\n"
-
+int a[101];
 void solve()
 {
     int n;
     cin >> n;
-    vector<int> a(n);
-    int sum = 0;
-    for (auto &x : a)
+
+    for (int i = 0; i < n; i++)
     {
-        cin >> x;
-        sum += x;
+        a[i] = i + 1;
+        if (i == n - 1)
+            a[n - 1] = n;
     }
-    if (sum == n)
-        cout << 0 << endl;
-    else if (sum > n)
-        cout << (sum - n) << endl;
+    for (int i = 0; i < n; i += 2)
+    {
+        swap(a[i], a[i + 1]);
+    }
+    if (n % 2 == 0)
+    {
+
+        for (int i = 0; i < n; i++)
+        {
+            cout << a[i] << " ";
+        }
+    }
     else
-        cout << 1 << endl;
+    {
+
+        swap(a[n - 1], a[n - 2]);
+        for (int i = 0; i < n; i++)
+        {
+            cout << a[i] << " ";
+        }
+    }
+    cout << endl;
 }
 int32_t main()
 {

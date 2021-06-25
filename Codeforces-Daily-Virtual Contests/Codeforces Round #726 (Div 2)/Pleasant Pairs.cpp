@@ -4,7 +4,7 @@ using namespace std;
 using ll = long long;
 
 #define mod 1000000007
-#define int long long int
+#define int long long
 #define fast ios_base::sync_with_stdio(false), cin.tie(NULL)
 #define PI 3.14159265358979323846
 #define endl "\n"
@@ -13,19 +13,23 @@ void solve()
 {
     int n;
     cin >> n;
-    vector<int> a(n);
-    int sum = 0;
-    for (auto &x : a)
-    {
-        cin >> x;
-        sum += x;
+    vector<int> a(n + 1);
+    unordered_map<int,int> mpp;
+    for (int i = 1; i <= n; i++){
+        cin >> a[i];
+        mpp[a[i]] = i;
     }
-    if (sum == n)
-        cout << 0 << endl;
-    else if (sum > n)
-        cout << (sum - n) << endl;
-    else
-        cout << 1 << endl;
+    int cnt = 0;
+    for (int i = 1; i <= n; i++)
+    {
+        if (mpp.find(a[i] - mpp[a[i]]/a[]) != mpp.end())
+            {
+                ans.push_back(mpp[target - nums[i]]);
+                ans.push_back(i);
+                return ans;
+            }
+    }
+    cout << cnt << endl;
 }
 int32_t main()
 {

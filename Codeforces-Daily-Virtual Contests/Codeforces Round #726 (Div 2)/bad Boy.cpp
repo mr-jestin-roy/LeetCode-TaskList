@@ -11,21 +11,9 @@ using ll = long long;
 
 void solve()
 {
-    int n;
-    cin >> n;
-    vector<int> a(n);
-    int sum = 0;
-    for (auto &x : a)
-    {
-        cin >> x;
-        sum += x;
-    }
-    if (sum == n)
-        cout << 0 << endl;
-    else if (sum > n)
-        cout << (sum - n) << endl;
-    else
-        cout << 1 << endl;
+    int n, m, i, j;
+    cin >> n >> m >> i >> j;
+    cout << 1 << " " << 1 << " " << n << " " << m << endl;
 }
 int32_t main()
 {

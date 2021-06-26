@@ -1,4 +1,11 @@
+// Given an array nums of n integers, return an array of all the unique quadruplets [nums[a], nums[b], nums[c], nums[d]] such that:
 
+// 0 <= a, b, c, d < n
+// a, b, c, and d are distinct.
+// nums[a] + nums[b] + nums[c] + nums[d] == target
+// // You may return the answer in any order.
+
+#include <bits/stdc++.h>
 class Solution
 {
 public:
@@ -35,14 +42,17 @@ public:
                         res.push_back(quad);
                         //jumping the duplicates
                         while (front < back && nums[front] == quad[2])
-                            --front;
+                            ++front;
+                        //jumping the duplicates
                         while (front < back && nums[back] == quad[3])
                             --back;
                     }
                 }
+                //jumping the duplicates
                 while (j + 1 < n && nums[j + 1] == nums[j])
                     ++j;
             }
+            //jumping the duplicates
             while (i + 1 < n && nums[i + 1] == nums[i])
                 ++i;
         }

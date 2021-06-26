@@ -23,6 +23,7 @@ public:
         return ans;
     }
 };
+
 //Optimal approach
 class Solution
 {

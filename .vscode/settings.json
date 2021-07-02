@@ -5,6 +5,8 @@
         "initializer_list": "cpp",
         "type_traits": "cpp",
         "xutility": "cpp",
-        "xlocale": "cpp"
+        "xlocale": "cpp",
+        "list": "cpp",
+        "vector": "cpp"
     }
 }

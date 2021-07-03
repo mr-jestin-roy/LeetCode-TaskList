@@ -1,18 +1,19 @@
+// O(N) APPROACH
+
 class Solution
 {
 public:
     void moveZeroes(vector<int> &nums)
     {
-        int n = nums.size();
-        int j = 0;
-        for (int i = 0; i < n; i++)
+        for (int p = 0, q = 0; q < nums.size(); q++)
         {
-            if (nums[i] != 0)
+            if (nums[q] != 0 && q == p) //skip nonzero elements
+                p++;
+            else if (nums[q] != 0)
             {
-                nums[j++] = nums[i];
+                nums[p++] = nums[q];
+                nums[q] = 0;
             }
         }
-        for (; j < n; j++)
-            nums[j] = 0;
     }
 };

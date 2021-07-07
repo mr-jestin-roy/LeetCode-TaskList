@@ -13,50 +13,15 @@ void solve()
 {
     int a, b;
     cin >> a >> b;
-    int score = 0;
-    if (a == 0 && b == 0)
+    if (a == b)
     {
-        cout << 0 << " " << 0 << endl;
-        return;
+        cout << "0 0" << endl;
     }
-    if (a == 0 || b == 0)
+    else
     {
-        score = __gcd(a, b);
-        cout << score << " " << 0 << endl;
-        return;
+        ll d = abs(a - b);
+        cout << d << " " << min(a % d, d - a % d) << endl;
     }
-    else if (a == b)
-    {
-        cout << 0 << " " << 0 << endl;
-        return;
-    }
-    if (max(a, b) - min(a, b) == 1)
-    {
-        int cnt = 0;
-        cout << max(a, b) - min(a, b) << " " << cnt << endl;
-        return;
-    }
-    int cnt = 0;
-
-    while (a > 0 && b > 0)
-    {
-        cnt = __gcd(a, b);
-
-        if (__gcd(a, b) == 0)
-        {
-            a++;
-            b++;
-            cnt++;
-        }
-        else
-        {
-            cout << max(a, b) - min(a, b) << " " << __gcd(a, b) << endl;
-            return;
-        }
-    }
-    cout << "__gcd(a, b) << "
-            " << cnt"
-         << endl;
 }
 
 int main()

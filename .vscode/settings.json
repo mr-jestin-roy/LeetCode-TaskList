@@ -8,6 +8,7 @@
         "xlocale": "cpp",
         "list": "cpp",
         "vector": "cpp",
-        "limits": "cpp"
+        "limits": "cpp",
+        "xhash": "cpp"
     }
 }

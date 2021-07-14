@@ -9,6 +9,7 @@
         "list": "cpp",
         "vector": "cpp",
         "limits": "cpp",
-        "xhash": "cpp"
+        "xhash": "cpp",
+        "iosfwd": "cpp"
     }
 }

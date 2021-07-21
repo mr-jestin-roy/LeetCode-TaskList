@@ -35,3 +35,31 @@ public:
         return res;
     }
 };
+
+
+//brute force method
+int trappingwater(int arr[], int n)
+{
+    int res = 0;
+    for (int i = 1; i < n-1; i++) {
+        int left = arr[i];
+        for (int j=0; j<i; j++)
+           left = max(left, arr[j]);
+
+        int right = arr[i];
+        for (int j=i+1; j<n; j++)
+           right = max(right, arr[j]);
+ 
+       res = res + (min(left, right) - arr[i]);  
+    }
+ 
+    return res;
+}
+
+def decToBinary(n):
+    for i in range(31, -1, -1):
+        k = n >> i;
+        if (k & 1):
+            print("1", end = "");
+        else:
+            print("0", end = "");

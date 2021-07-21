@@ -10,6 +10,7 @@
         "vector": "cpp",
         "limits": "cpp",
         "xhash": "cpp",
-        "iosfwd": "cpp"
+        "iosfwd": "cpp",
+        "deque": "cpp"
     }
 }

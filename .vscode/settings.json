@@ -11,6 +11,8 @@
         "limits": "cpp",
         "xhash": "cpp",
         "iosfwd": "cpp",
-        "deque": "cpp"
+        "deque": "cpp",
+        "utility": "cpp",
+        "algorithm": "cpp"
     }
 }

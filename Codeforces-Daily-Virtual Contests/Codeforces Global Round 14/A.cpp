@@ -1,10 +1,6 @@
 #include <bits/stdc++.h>
 
 using namespace std;
-bool isSquare(int x) {
-	int y = sqrt(x);
-	return y * y == x;
-}
 
 int main() {
 	int t;

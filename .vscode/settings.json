@@ -14,6 +14,9 @@
         "deque": "cpp",
         "utility": "cpp",
         "algorithm": "cpp",
-        "string": "cpp"
+        "string": "cpp",
+        "xiosbase": "cpp",
+        "ios": "cpp",
+        "tuple": "cpp"
     }
 }

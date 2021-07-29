@@ -13,6 +13,7 @@
         "iosfwd": "cpp",
         "deque": "cpp",
         "utility": "cpp",
-        "algorithm": "cpp"
+        "algorithm": "cpp",
+        "string": "cpp"
     }
 }

@@ -1,108 +1,85 @@
-#include "bits/stdc++.h"
+#include <bits/stdc++.h>
 using namespace std;
+#define M 1000000007
+#define U 998244353
+#define N 1000005
 #define int long long
+#define sz(c) (int)c.size()
+#define fr first
+#define ll long long 
+#define sc second
 #define pb push_back
 #define ppb pop_back
-#define pf push_front
-#define ppf pop_front
-#define all(x) (x).begin(), (x).end()
-#define uniq(v) (v).erase(unique(all(v)), (v).end())
-#define sz(x) (int)((x).size())
-#define fr first
-#define sc second
-#define pii pair<int, int>
-#define rep(i, a, b) for (int i = a; i < b; i++)
-#define mem1(a) memset(a, -1, sizeof(a))
-#define mem0(a) memset(a, 0, sizeof(a))
-#define ppc __builtin_popcount
-#define ppcll __builtin_popcountll
+#define mp make_pair
+#define all(a) (a).begin(),(a).end()
+#define rep(i,a,n) for(int i=a ; i<n ; i++)
+#define r0 return 0;
+#define endl '\n'
+#define INF (int)1e15
 
-template <typename T1, typename T2>
-istream &operator>>(istream &in, pair<T1, T2> &a)
-{
-    in >> a.fr >> a.sc;
-    return in;
-}
-template <typename T1, typename T2>
-ostream &operator<<(ostream &out, pair<T1, T2> a)
-{
-    out << a.fr << " " << a.sc;
-    return out;
-}
-template <typename T, typename T1>
-T amax(T &a, T1 b)
-{
-    if (b > a)
-        a = b;
-    return a;
-}
-template <typename T, typename T1>
-T amin(T &a, T1 b)
-{
-    if (b < a)
-        a = b;
-    return a;
-}
+/* Debug Begins */ 
+# define trace(args...) { string _s = #args; replace(_s.begin(), _s.end(), ',', ' '); \
+  stringstream _ss(_s); istream_iterator<string> _it(_ss); err(_it, args); }
+string to_string(char c) { return "'" + string(1, c) + "'";}
+string to_string(string s) { return '"' + s + '"';}
+string to_string(bool f) { if(f) return "True"; else return "False";}
+string to_string(const char* s) { return to_string((string) s);}
+template<typename A> string to_string(A);
+template<typename A, typename B> string to_string(pair<A, B> p){
+  return "(" + to_string(p.first) + ": " + to_string(p.second) + ")";}
+template<typename A> string to_string(A v) {bool f = false; string r = "{"; 
+  for (auto x: v) {if (f) r += ", "; r += to_string(x); f = true;} return r += "}";}
+template<typename A> string to_string(vector<vector<A>> v) {string r; 
+  for (auto x: v) r += "\n" + to_string(x); return r;}
+int Nerr;
+template<typename A> string to_string(A *p) {return to_string(vector<A>(p, p + Nerr));}
+void err(istream_iterator<string>) { cerr << endl; }
+template<typename T,typename... Args> void err(istream_iterator<string> it, T a, Args... args) {
+  cerr << *it << " = " << to_string(a) << "; "; err(++it, args...); }
+template<typename T> void kek(T ans) {cout << ans << endl; exit(0);}
+#define Lu(...) [&] (auto &&u) { return __VA_ARGS__; }
+#define Luv(...) [&] (auto &&u, auto &&v) { return __VA_ARGS__; }
+/***************************************************************/
 
-const long long INF = 1e18;
-const int32_t M = 1e9 + 7;
-const int32_t MM = 998244353;
-
-const int N = 1e9;
-
-void solve(int test)
-{
-    cout << "Case #" << test << ": ";
-
-    int ans = 0;
-    int g00, g01, g02, g10, g12, g20, g21, g22;
-    cin >> g00 >> g01 >> g02 >> g10 >> g12 >> g20 >> g21 >> g22;
-    int mid = 0;
-    vector<int> cnt(1000, 0);
-    mid = (g20 + g02) / 2;
-    cnt[mid]++;
-    mid = (g10 + g12) / 2;
-    cnt[mid]++;
-    mid = (g00 + g22) / 2;
-    cnt[mid]++;
-    mid = (g01 + g21) / 2;
-    cnt[mid]++;
-
-    int check = max_element(cnt.begin(), cnt.end()) - cnt.begin();
-
-    if ((g20 + g02) / 2 == check)
-        ans++;
-    if ((g00 + g22) / 2 == check)
-        ans++;
-    if ((g10 + g12) / 2 == check)
-        ans++;
-    if ((g01 + g21) / 2 == check)
-        ans++;
-    //non-mid
-    if ((g00 + g02) / 2 == g01)
-        ans++;
-    if ((g00 + g20) / 2 == g10)
-        ans++;
-    if ((g02 + g22) / 2 == g12)
-        ans++;
-    if ((g20 + g22) / 2 == g21)
-        ans++;
-    cout << ans;
-    cout << "\n";
+bool check(int a, int b){
+    if((a+b)%2) return false;
+    return true;
 }
 signed main()
 {
-    ios_base::sync_with_stdio(false);
-    cin.tie(0);
-    cout.tie(0);
-//freopen("input.txt", "r", stdin);
-//freopen("output.txt", "w", stdout);
-#ifdef SIEVE
-    sieve();
-#endif
-
-    int t = 1;
-    cin >> t;
-    rep(i, 1, t + 1) solve(i);
-    return 0;
+    ios_base::sync_with_stdio(0);
+    int TESTS=1;
+    cin>>TESTS;
+    for(int qq = 1; qq<=TESTS; ++qq)
+    {   
+        cout << "Case #" << qq << ": ";
+        vector<vector<int>> a(3, vector<int>(3));
+        rep(i,0,3) cin >> a[0][i];
+        cin >> a[1][0] >> a[1][2];
+        rep(i,0,3) cin >> a[2][i];
+        map<int,int> m;
+        //check for middle element ,check if sum is even
+        if(check(a[1][0], a[1][2]))
+            m[(a[1][0]+a[1][2])/2]++;
+        if(check(a[0][1], a[2][1]))
+            m[(a[0][1]+a[2][1])/2]++;
+        if(check(a[0][0], a[2][2]))
+            m[(a[0][0]+a[2][2])/2]++;
+        if(check(a[0][2], a[2][0]))
+            m[(a[0][2]+a[2][0])/2]++;
+        int ans = 0;
+        for(auto j : m){
+            ans = max(ans, j.sc);
+        }
+        //check sides for same
+        if(check(a[0][0], a[0][2]))
+            ans += (a[0][1] == (a[0][0]+a[0][2])/2);
+        if(check(a[2][0], a[2][2]))
+            ans += (a[2][1] == (a[2][0]+a[2][2])/2);
+        if(check(a[0][0], a[2][0]))
+            ans += (a[1][0] == (a[0][0]+a[2][0])/2);
+        if(check(a[0][2], a[2][2]))
+            ans += (a[1][2] == (a[0][2]+a[2][2])/2);
+        cout << ans << endl;
+    }
 }

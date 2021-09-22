@@ -9,7 +9,20 @@ using namespace std;
 
 void solve()
 {
-
+    int n; cin>>n;
+    string s,res = "";
+    cin>>s;
+    for(int i=0;i<s.size();i++){
+        if(s[i]=='U')
+            res += 'D';
+        else if(s[i]== 'D')
+            res += 'U';
+        else if(s[i] == 'R')
+            res += 'R';
+        else if(s[i] == 'L')
+            res += 'L';
+    }
+    cout<<res<<endl;
 }
 
 int32_t main()
@@ -18,7 +31,7 @@ int32_t main()
     cout << fixed << setprecision(20);
 
     int t = 1;
-    // cin >> t;
+    cin >> t;
     for (int tt = 1; tt <= t; tt++)
     {
         // cout << "Case #" << tt << ": ";

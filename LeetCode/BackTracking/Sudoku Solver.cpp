@@ -1,3 +1,4 @@
+class Solution {
 bool check(vector<vector<char>> &board, int i, int j, char val)
 {
     int row = i - i % 3, column = j - j % 3;
@@ -37,7 +38,8 @@ bool solveSudoku(vector<vector<char>> &board, int i, int j)
 }
 
 public:
-void solveSudoku(vector<vector> &board)
+void solveSudoku(vector<vector<char>> &board)
 {
     solveSudoku(board, 0, 0);
 }
+};

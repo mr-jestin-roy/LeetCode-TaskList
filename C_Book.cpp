@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-#define int long long
+#define ll long long
 #define pb push_back
 #define ppb pop_back
 #define pf push_front
@@ -25,50 +25,50 @@ const int N = 0;
 
 void solve()
 {
-    int n;cin>>n;
-    vector<vector<int>> adj(n);
-    map<int,int> indegree;
-    rep(i,0,n){
-        int k;
-        cin>>k;
-        rep(j,0,k){
-            int chapter;
-            cin>>chapter;
-            chapter--;
-            adj[chapter].pb(i);
-            indegree[i]++;
+    ll n;
+        cin>>n;
+        vl v(n);
+        for(ll i=0;i<n;i++)
+        {
+            cin>>v[i];
         }
-    }
-    queue<int> q;
-    rep(i,0,n){
-        if(indegree[i] == 0)    q.push(i);
-    }
-    int read =0;
-    vector<int> graph(n,1);
-    while(!q.empty()){
-        read++;
-        int node = q.front();
-        q.pop();
-        for(auto child: adj[node]){
-            if(child > node)
-                graph[child] = max(graph[child],graph[node]);
-            else
-                graph[child] = max(graph[child],1+graph[node]);
-            
-            indegree[child]--;
-            if(indegree[child] == 0){
-                q.push(child);
+        vvl ans;
+        for(ll i=n-1;i>0;i--)
+        {
+            ll mx=-inf;
+            ll ind=-1;
+            for(ll j=0;j<=i;j++)
+            {
+                if(mx<v[j])
+                {
+                    mx=v[j];
+                    ind=j;
+                }
+            }
+            if(ind==i)
+            {
+                continue;
+            }
+            else{
+                vl temp;
+                vl tempv(n);
+                for(ll j=0;j<=i;j++)
+                {
+                    tempv[j]=v[(j+ind+1)%(i+1)];
+                }
+                v=tempv;
+                ans.push_back({1,i+1,ind+1});
             }
         }
-    }
-    if(read != n)
-        cout<<-1<<endl;
-    else{
-        int ans =0;
-        for(auto node:graph)    ans = max(ans,node);
-        
-        cout<<ans<<endl;
-    }
+        cout<<ans.size()<<"\n";
+        for(auto itr:ans)
+        {
+            for(auto it:itr)
+            {
+                cout<<it<<" ";
+            }
+            cout<<"\n";
+        }
 }
 signed main()
 {

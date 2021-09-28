@@ -23,22 +23,19 @@ int main()
         }
         for(int i=0;i<n;i++)
         {
-            int a;cin>>a;
+            int a;cin>>a;   //for particular 
             pos[a]=i+1;
         }
-
         int ans=1e6;
 
-        int me=1e6;
-        for(int i=(2*n)-1;i>0;i-=2)
+        int swapme=1e6;
+        
+        for(int i = (2*n)-1;i>=0;i-=2)
         {
-            me=min(me,pos[i+1]);    
-            int tt=pos[i]-1;
+            swapme=min(swapme,pos[i+1]);    
+            int temp=pos[i]-1;
             
-            ans=min(ans,tt+me-1);
-
-
-            
+            ans=min(ans,temp+swapme-1); 
         }
         cout<<ans<<endl;
 

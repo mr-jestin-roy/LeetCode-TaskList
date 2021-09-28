@@ -16,7 +16,7 @@ int main()
         for(int i=0;i<n;i++)
         {
             int cc=s[i]-'0';
-            if(cc)
+            if(cc != 0)
             {
                 ans+=cc;
                 if(i<n-1)

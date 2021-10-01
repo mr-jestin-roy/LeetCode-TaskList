@@ -17,3 +17,5 @@ int largestRectangleArea(vector<int>& heights) {
         }
         return maxA;
     }
+
+    //hackeroctober fest submission

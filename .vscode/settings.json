@@ -1,22 +1,23 @@
 {
-    "files.associations": {
-        "cstdlib": "cpp",
-        "xstring": "cpp",
-        "initializer_list": "cpp",
-        "type_traits": "cpp",
-        "xutility": "cpp",
-        "xlocale": "cpp",
-        "list": "cpp",
-        "vector": "cpp",
-        "limits": "cpp",
-        "xhash": "cpp",
-        "iosfwd": "cpp",
-        "deque": "cpp",
-        "utility": "cpp",
-        "algorithm": "cpp",
-        "string": "cpp",
-        "xiosbase": "cpp",
-        "ios": "cpp",
-        "tuple": "cpp"
-    }
+  "files.associations": {
+    "cstdlib": "cpp",
+    "xstring": "cpp",
+    "initializer_list": "cpp",
+    "type_traits": "cpp",
+    "xutility": "cpp",
+    "xlocale": "cpp",
+    "list": "cpp",
+    "vector": "cpp",
+    "limits": "cpp",
+    "xhash": "cpp",
+    "iosfwd": "cpp",
+    "deque": "cpp",
+    "utility": "cpp",
+    "algorithm": "cpp",
+    "string": "cpp",
+    "xiosbase": "cpp",
+    "ios": "cpp",
+    "tuple": "cpp",
+    "ostream": "cpp"
+  }
 }

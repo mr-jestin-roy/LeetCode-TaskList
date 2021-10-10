@@ -18,6 +18,7 @@
     "xiosbase": "cpp",
     "ios": "cpp",
     "tuple": "cpp",
-    "ostream": "cpp"
+    "ostream": "cpp",
+    "unordered_map": "cpp"
   }
 }

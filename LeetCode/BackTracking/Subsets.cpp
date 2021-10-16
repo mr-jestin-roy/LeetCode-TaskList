@@ -19,3 +19,20 @@ public:
         
     }
 };
+
+class Solution {
+public:
+    //BACKTRACKING ITERATIVE ALGORITHM
+    vector<vector<int>> subsets(vector<int>& nums) {
+        vector<vector<int>> output = {{}};
+        for(int num : nums){
+            int n = output.size();
+            for(int i=0;i<n;i++){
+                output.push_back(output[i]);
+                output.back().push_back(num);
+            }
+        }
+        return output;
+    }
+    
+};

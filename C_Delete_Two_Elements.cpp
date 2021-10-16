@@ -54,15 +54,7 @@ int check(int arr[], int n, int sum)
 void solve()
 {
     
-    int n;cin>>n;
-    int a[n];
-    int sum=0;
-    for(int i=0;i<n;i++){
-        cin>>a[i]; sum+= a[i];
-    }
-    int res = (2*sum);
-    int cnt =  check(a,n,res);
-    cout<<cnt<<endl;      
+    
 }
 signed main()
 {
@@ -79,8 +71,30 @@ signed main()
 #endif
     int t = 1;
     cin >> t;
-    while (t--)
-        solve();
+    while (t--){
+        int n;cin>>n;
+    int arr[n];
+    int sum =0;
+    unordered_map<int,int>m;
+    for (int i = 0; i < n; i++) {
+			cin >> arr[i];
+			sum += arr[i];
+		}
+		for (int i = 0; i < n; i++) {
+			arr[i] *= n;
+		}
+		int ans = 0;
+		for (int i = 0; i < n; i++) {
+			int val1 = sum * 2ll;
+			int val2 = arr[i];
+			if (m.find(val1 - val2) != m.end())
+				ans += m[val1 - val2];
+			m[val2]++;
+		}
+		cout << ans << endl;
+
+    }
+        // solve();
     return 0;
 }
 

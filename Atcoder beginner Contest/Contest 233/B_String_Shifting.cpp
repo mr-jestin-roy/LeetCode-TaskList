@@ -23,22 +23,6 @@ const int32_t MM = 998244353;
 
 const int N = 0;
 
-void solve()
-{
-    
-    string s;
-     cin>>s;
-    unordered_map<char, int> m;
-    for(int i=0;i<s.length();i++)
-        m[s[i]]++;
-
-    if(m.size()%2==0)
-        cout<<"CHAT WITH HER!"<<endl;
-    else
-        cout<<"IGNORE HIM!"<<endl;
-    
-
-}
 signed main()
 {
     ios_base::sync_with_stdio(false);
@@ -58,15 +42,16 @@ signed main()
     {
         string s;
         cin>>s;
+        string combination = s + s;
         int n = s.size();
         string arr[n];
-        string combination = s + s;
+    
         for(int i=0;i<n;i++){
             arr[i] = combination.substr(i,n);
         }
         sort(arr,arr+n);
         cout<<arr[0]<<endl;
-        cout<<arr[n-1]<<endl;
+        cout<<arr[n-1];
     }
     return 0;
 }

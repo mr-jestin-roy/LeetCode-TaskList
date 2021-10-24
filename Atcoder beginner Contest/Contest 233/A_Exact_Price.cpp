@@ -23,22 +23,7 @@ const int32_t MM = 998244353;
 
 const int N = 0;
 
-void solve()
-{
-    
-    string s;
-     cin>>s;
-    unordered_map<char, int> m;
-    for(int i=0;i<s.length();i++)
-        m[s[i]]++;
 
-    if(m.size()%2==0)
-        cout<<"CHAT WITH HER!"<<endl;
-    else
-        cout<<"IGNORE HIM!"<<endl;
-    
-
-}
 signed main()
 {
     ios_base::sync_with_stdio(false);
@@ -58,13 +43,12 @@ signed main()
     {
         int x;
         cin>>x;
-        if(x<100){
+        if(x<100 || x%100 != 0){
             cout<<"No"<<endl;
         }
         else if(x%100 == 0)
             cout<<"Yes"<<endl;
-        else
-            cout<<"No"<<endl;
+        
     }
     return 0;
 }

@@ -17,13 +17,24 @@ using namespace std;
 #define ppc __builtin_popcount
 #define ppcll __builtin_popcountll
 
-const long long INF = 1e18;
-const int32_t M = 1e9 + 7;
-const int32_t MM = 998244353;
-
-#define N	100000
 
 
+void solve()
+{
+    int ans =0;
+    int x,y;
+    cin>>x>>y;
+    while(x!=y){
+        if(x<y)
+            x+=2;
+        else if(x>y)
+            x-=1;
+        
+        ans++;        
+    }
+    cout<<ans<<endl;
+
+}
 signed main()
 {
     ios_base::sync_with_stdio(false);
@@ -38,34 +49,10 @@ signed main()
     init();
 #endif
     int t = 1;
-    // cin >> t;
+    cin >> t;
     while (t--)
-    {
-        int n;
-    
-    double sum=0,x=0;
-    cin>>n;
-    int arr[n],brr[n];
-  
-    for(int i =0;i<n;i++){
-        cin>>arr[i]>>brr[i];
-        sum += (double) arr[i]/brr[i];
-    }
-    //find middle
-    sum = sum/2;
-
-    for(int i=0;i<n;i++){
-        double c = (double) arr[i]/brr[i];
-        if(sum >= c){
-            sum -= c;
-            x += arr[i];
-        }
-        else{
-            x += sum * brr[i];
-            break;
-        }
-    }
-    printf("%f\n",x);
+    {   
+         solve();
     }
     return 0;
 }

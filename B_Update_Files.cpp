@@ -1,45 +1,55 @@
-#pragma GCC optimize("Ofast")
 #include <bits/stdc++.h>
 using namespace std;
-#define endl "\n"
-#define int long long int
-#define mod 1000000007
-#define fast ios_base::sync_with_stdio(false), cin.tie(NULL)
-#define PI 3.14159265358979323846
-#define inf 1e18
-
-const long long INF = 1e18;
-const int32_t M = 1e9 + 7;
-const int32_t MM = 998244353;
-
-const int N = 0;
+typedef long long ll;
+typedef unsigned long long ull;
+typedef pair<int,int> pii;
+#define x first
+#define y second
+#define pb push_back
+#define mp make_pair
+template <typename T> void chkmin(T &x,T y){y<x?x=y:T();}
+template <typename T> void chkmax(T &x,T y){x<y?x=y:T();}
+template <typename T> void readint(T &x)
+{
+	int f=1;char c;x=0;
+	for(c=getchar();!isdigit(c);c=getchar())if(c=='-')f=-1;
+	for(;isdigit(c);c=getchar())x=x*10+(c-'0');
+	x*=f;
+}
+const int MOD=998244353;
+inline int dmy(int x){return x>=MOD?x-MOD:x;}
+inline void inc(int &x,int y){x=dmy(x+y);}
+int qmi(int x,int y)
+{
+	int ans=1;
+	for(;y;y>>=1,x=1ll*x*x%MOD)
+		if(y&1)ans=1ll*ans*x%MOD;
+	return ans;
+}
+const int MAXN=200005;
 
 void solve()
 {
-    int n,k;
-    cin>>n>>k;
-    int count =0,currSum =1;
-    while(currSum < k){
-        currSum += currSum;
-        count++;
-    }
-    int left = n-currSum;
-    if(left>0){
-        count += (left/k) + (left%k != 0);
-    }
-    cout<<count<<endl;
-
+	ll n,k;
+	readint(n),readint(k);
+	ll u=1,s=1,c=0;
+	if(s>=n){printf("%lld\n",c);return;}
+	for(;u<=k;u*=2)
+	{
+		s+=u,++c;
+		if(s>=n){printf("%lld\n",c);return;}
+	}
+	printf("%lld\n",c+(n-s+k-1)/k);
 }
-int32_t main()
+
+int main()
 {
-    fast;
-    cout << fixed << setprecision(20);
-    int t = 1;
-    cin >> t;
-    for (int tt = 1; tt <= t; tt++)
-    {
-        // cout << "Case #" << tt << ": ";
-        solve();
-    }
+	#ifdef LOCAL
+	freopen("code.in","r",stdin);
+//	freopen("code.out","w",stdout);
+	#endif
+	int T;
+	readint(T);
+	while(T--)solve();
+	return 0;
 }
-

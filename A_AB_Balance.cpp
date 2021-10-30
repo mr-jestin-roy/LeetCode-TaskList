@@ -27,43 +27,10 @@ void solve()
 {
     string str;
     cin>>str;
-    int cnt1 =0;
-    int cnt2 = 0;
-    int n = str.size();
-    for(int i=0;i<n-1;i++){
-        if((str[i]=='a' && str[i+1]=='b'))
-        {
-            cnt1++;
-        }   
-        else if((str[i]=='b' && str[i+1]=='a'))
-            cnt2++;
-    }
-    if(cnt1 == cnt2){
-        cout<<str<<endl;
-        return;
-    }
-    else{
-        if(cnt1 > cnt2){
-            for(int i=n-1;i>=0;i--){
-                if((str[i-1]=='a' && str[i]=='b'))
-                {   str[i]='a';
-                    cnt1--;       
-                }
-                else if((str[i-1]=='b' && str[i]=='a'))
-                {   str[i]='b';
-                    cnt2--;       
-                }
-             
-            }
-        }
-        else{
-            for(int i=n-1;i>=0;i--){
-                
-             
-            }
-        }
-    }
-    
+    int n = str.length();
+
+    if(str[0] != str[n-1])
+        str[0]= str[n-1];
     cout<<str<<endl;
 
 }

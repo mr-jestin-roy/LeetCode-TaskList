@@ -2,25 +2,32 @@
 #include <bits/stdc++.h>
 using namespace std;
 #define endl "\n"
-#define int long long
+#define int long long 
 #define mod 1000000007
 #define fast ios_base::sync_with_stdio(false), cin.tie(NULL)
 #define PI 3.14159265358979323846
 
 void solve()
 {
-    int n;
-    cin>>n;
-    int arr[n+1];
-    for(int i=1;i<=n;i++){
-        cin>>arr[i];
+    string seq;
+    cin>>seq;
+    string s;
+    cin>>s;
+    int ans =0;
+    int n = s.size();
+    map<char,int> mpp;
+    for(int i=0;i<seq.length();i++){
+        mpp[seq[i]] =i;
     }
-    int maxdiff =0;
-    for(int i=1;i<=n;i++){
-        if(abs(arr[i]-i) > maxdiff && (arr[i]>i))
-            maxdiff = abs(arr[i]-i);
+    
+    
+    for(int i=0;i<s.length()-1;i++){  
+        int a = mpp[s[i]];
+        int b = mpp[s[i+1]] ;  
+            ans += abs(a-b);
+        
     }
-    cout<<maxdiff<<endl;
+    cout<<ans<<endl;
 
 }
 

@@ -9,26 +9,22 @@ using namespace std;
 
 void solve()
 {
-   int n; cin>>n;
-   string s; cin>>s; 
-   char temp=s[0];
-   int count=1; 
-   for(int i=0;i<n;i++)
-   {
-       if(s[i]!=temp) 
-       {temp=s[i];
-        count++;
-        }
-   }
-    if(count==1) cout << "SAHID";
-    else if(count==2) cout << "RAMADHIR";
-    else
-    {
-        if(count%3==0) cout << "SAHID";
-        else if(count%3==1) cout << "SAHID";
-        else cout << "RAMADHIR";
+    int n;
+    cin>>n;
+    vector<int> a(n);
+    for(int i=0;i<n;i++)    cin>>a[i];
+    sort(a.begin(),a.end());
+    int cnt=0;
+    int ans =0;
+    for(int i=0;i<n;i++){
+        cnt++;
+        if(i+1 < n && a[i]==a[i+1])
+            continue;
+        if(i+1 > n-i-1) 
+            ans += cnt;
+        cnt=0;
     }
-    cout<<endl;
+    cout<<ans<<endl;
 
 }
 

@@ -9,26 +9,11 @@ using namespace std;
 
 void solve()
 {
-   int n; cin>>n;
-   string s; cin>>s; 
-   char temp=s[0];
-   int count=1; 
-   for(int i=0;i<n;i++)
-   {
-       if(s[i]!=temp) 
-       {temp=s[i];
-        count++;
-        }
-   }
-    if(count==1) cout << "SAHID";
-    else if(count==2) cout << "RAMADHIR";
-    else
-    {
-        if(count%3==0) cout << "SAHID";
-        else if(count%3==1) cout << "SAHID";
-        else cout << "RAMADHIR";
-    }
-    cout<<endl;
+    int n;
+    cin>>n;
+    n= n-1;
+    
+    cout<<1 + (n-1)*n<<endl;
 
 }
 

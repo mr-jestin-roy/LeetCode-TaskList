@@ -19,6 +19,7 @@
     "ios": "cpp",
     "tuple": "cpp",
     "ostream": "cpp",
-    "unordered_map": "cpp"
+    "unordered_map": "cpp",
+    "iostream": "cpp"
   }
 }

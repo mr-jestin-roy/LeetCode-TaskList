@@ -20,6 +20,7 @@
     "tuple": "cpp",
     "ostream": "cpp",
     "unordered_map": "cpp",
-    "iostream": "cpp"
+    "iostream": "cpp",
+    "cmath": "cpp"
   }
 }

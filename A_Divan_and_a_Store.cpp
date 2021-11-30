@@ -9,17 +9,25 @@ using namespace std;
 
 void solve()
 {
-    int m, n;
-    cin >> m >> n;
-    int x = max(m, n);
-    int y = min(m, n);
-    if(x >= 3*y){
-        cout << y << endl;
-        return;
+    int n,l,r,k;
+    cin >> n >> l >> r >> k;
+    vector<int> arr(n);
+    for (int i = 0; i < n;i++){
+        cin >> arr[i];
     }
-    else{
-        cout << (x + y) / 4 << endl;
+    int count = 0;
+    sort(arr.begin(), arr.end());
+    for (int i = 0; i < n;i++){
+        if(arr[i] >= l && arr[i] <= r && k >= arr[i])
+            {
+                count++;
+                k -= arr[i];
+            }
+        if(k==0){
+            break;
+        }
     }
+    cout << count << endl;
 }
 
 int32_t main()

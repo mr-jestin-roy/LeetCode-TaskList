@@ -37,7 +37,6 @@ Sample Output :
 
     
 }
-/*
 Node* mergeTwoLLs(Node *head1, Node *head2) {
     Node *fh=NULL,*ft=NULL; 
     while(head1!=NULL && head2!=NULL){
@@ -70,4 +69,4 @@ Node* mergeTwoLLs(Node *head1, Node *head2) {
         ft->next=head2;
     return fh;
 }
-*/
+

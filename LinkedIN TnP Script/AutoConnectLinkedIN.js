@@ -10,7 +10,7 @@ Linkedin = {
     totalRequestsSent: 0,
     // set to false to skip adding note in invites
     addNote: true,
-    note: "Hey {{name}}, I'm looking forward to connecting with you!",
+    note: "Hey {{name}}, we at Training & Placement Cell, MACE are looking forward to connecting with you!",
   },
   init: function (data, config) {
     console.info("INFO: script initialized on the page...");

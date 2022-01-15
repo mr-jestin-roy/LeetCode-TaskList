@@ -21,6 +21,8 @@
     "ostream": "cpp",
     "unordered_map": "cpp",
     "iostream": "cpp",
-    "cmath": "cpp"
+    "cmath": "cpp",
+    "queue": "cpp",
+    "stack": "cpp"
   }
 }

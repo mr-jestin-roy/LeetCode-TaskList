@@ -14,24 +14,36 @@ int findTheWinner(int n, int k) {
 }
 void solve()
 {
-    string s;
-    cin>>s;
-    int max = 0;
-    string x = "";
-    for (int i = 0; i < s.size()-1; i++)
-    {
-
-        int temp = (s[i] - '0') + (s[i + 1] - '0');
-        if(temp >= 10 && temp > max){
-            max = temp;
-            x = s[i] + s[i + 1];
+        string s;
+        cin >> s;
+        int lastOcc = -1;
+        for(int i = 0; i < s.length() - 1; i++){
+            int a = s[i] - '0';
+            int b = s[i + 1] - '0';
+            if(a + b >= 10){
+                lastOcc = i;
+            }
         }
-    }
-    cout <<max<< endl;
-    string a = to_string(max);
-    s.replace(s.find(x), max);
-
-    cout << s << endl;
+        if(lastOcc == -1){
+            int a = s[0] - '0';
+            int b = s[0 + 1] - '0';
+            cout << a + b;
+            for(int i = 2; i < s.length(); i++){
+                cout << s[i];
+            }
+            cout << endl;
+        }else{
+            for(int i = 0; i < lastOcc; i++){
+                cout << s[i];
+            }            
+            int a = s[lastOcc] - '0';
+            int b = s[lastOcc + 1] - '0';
+            cout << a + b;
+            for(int i = lastOcc + 2; i < s.length(); i++){
+                cout << s[i];
+            }
+            cout << endl;
+        }
 }
 
 int32_t main()

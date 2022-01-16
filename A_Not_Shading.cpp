@@ -38,23 +38,28 @@ void solve()
     }
     
     
-    if(cntB > 0){   //white 
-        if(a[r][c]==1)
+    if(cntB > 0){   //white
+        int ans = 2;
+        if(a[r][c]==1){
             cout << 0 << endl;
-        else if(a[0][c]==1 || a[r][0]==1){
-            cout << 1 << endl;
+            return;
         }
-        else{
-            cout << 2 << endl;
+            
+        if(a[0][c]==1){
+            ans = 1;
         }
-    // for (int i = 1; i <= n;i++)
-    // {
-    //     for (int j = 1;j <= m;j++)
-    //     {
-    //         cout << a[i][j] << " ";
-    //     }
-    //     cout << endl;
-    // }
+        if(a[r][0]==1){
+            ans =1;
+        }
+        cout << ans << endl;
+        // for (int i = 1; i <= n;i++)
+        // {
+        //     for (int j = 1;j <= m;j++)
+        //     {
+        //         cout << a[i][j] << " ";
+        //     }
+        //     cout << endl;
+        // }
     }
     else{
         cout << -1 << endl;

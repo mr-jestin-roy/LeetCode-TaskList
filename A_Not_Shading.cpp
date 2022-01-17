@@ -1,82 +1,89 @@
-#include <bits/stdc++.h>
+#include "bits/stdc++.h"
 using namespace std;
-#define fast ios_base::sync_with_stdio(false), cin.tie(NULL)
-#define int long long int
-#define mod 998244353
-#define endl "\n"
-#define inf 1e15
+#define int               long long
+#define pb                push_back
+#define ppb               pop_back
+#define pf                push_front
+#define ppf               pop_front
+#define all(x)            (x).begin(),(x).end()
+#define uniq(v)           (v).erase(unique(all(v)),(v).end())
+#define sz(x)             (int)((x).size())
+#define fr                first
+#define sc                second
+#define pii               pair<int,int>
+#define rep(i,a,b)        for(int i=a;i<b;i++)
+#define mem1(a)           memset(a,-1,sizeof(a))
+#define mem0(a)           memset(a,0,sizeof(a))
+#define ppc               __builtin_popcount
+#define ppcll             __builtin_popcountll
 
-int findTheWinner(int n, int k) {
-        int res = 0;
-        for (int i = 1; i <= n; ++i)
-            res = (res + k) % i;
-        return res + 1;
-}
-void solve()
-{
+template<typename T1,typename T2>istream& operator>>(istream& in,pair<T1,T2> &a){in>>a.fr>>a.sc;return in;}
+template<typename T1,typename T2>ostream& operator<<(ostream& out,pair<T1,T2> a){out<<a.fr<<" "<<a.sc;return out;}
+template<typename T,typename T1>T amax(T &a,T1 b){if(b>a)a=b;return a;}
+template<typename T,typename T1>T amin(T &a,T1 b){if(b<a)a=b;return a;}
+
+const long long INF=1e18;
+const int32_t M=1e9+7;
+const int32_t MM=998244353;
+
+const int N=0;
+
+
+
+void solve(){
     int n, m, r, c;
     cin >> n >> m >> r >> c;
-    
-    int a[n+1][m+1];
+    r -= 1;
+    c -= 1;
+    string s[n];
 
-    int cntB = 0;
-    for (int i = 1; i <= n;i++)
-    {
-        for (int j = 1;j <= m;j++)
-        {
-            a[i][j] = 0;
-            char c;
-            cin >> c;
-            if(c == 'B'){
-                a[i][j] = 1;
-                a[0][j] = 1;
-                a[i][0] = 1;
-                cntB++;
-            }
+    bool b = 0;
+    rep(i,0,n){
+        cin>>s[i];
+        rep(j,0,m){
+            if(s[i][j] == 'B')
+                b = 1;//marked as true
         }
-        
     }
-    
-    
-    if(cntB > 0){   //white
-        int ans = 2;
-        if(a[r][c]==1){
-            cout << 0 << endl;
-            return;
-        }
-            
-        if(a[0][c]==1){
+    if(s[r][c] == 'B'){
+        cout << 0 << "\n";
+        return;
+    }
+    if(!b){
+        cout << -1 << "\n";
+        return;
+    }
+
+    bool ans = 0;
+    rep(i,0,n){
+        if(s[i][c] == 'B')
             ans = 1;
-        }
-        if(a[r][0]==1){
-            ans =1;
-        }
-        cout << ans << endl;
-        // for (int i = 1; i <= n;i++)
-        // {
-        //     for (int j = 1;j <= m;j++)
-        //     {
-        //         cout << a[i][j] << " ";
-        //     }
-        //     cout << endl;
-        // }
+    }
+    rep(j,0,m){
+        if(s[r][j]=='B')
+            ans = 1;
+    }
+
+    if(ans){
+        cout << 1 << "\n";
     }
     else{
-        cout << -1 << endl;
+        cout << 2 << "\n";
     }
-    
-   
 }
-
-int32_t main()
-{
-    fast;
-    cout << fixed << setprecision(20);
-    int t = 1;
-    cin >> t;
-    for (int tt = 1; tt <= t; tt++)
-    {
-        // cout << "Case #" << tt << ": ";
-        solve();
-    }
+signed main(){
+	ios_base::sync_with_stdio(false);
+	cin.tie(0);cout.tie(0);
+	//freopen("input.txt", "r", stdin);
+	//freopen("output.txt", "w", stdout);
+	#ifdef SIEVE
+		sieve();
+	#endif
+	#ifdef NCR
+		init();
+	#endif
+	int t=1;
+	cin>>t;
+	while(t--) solve();
+	return 0;
 }

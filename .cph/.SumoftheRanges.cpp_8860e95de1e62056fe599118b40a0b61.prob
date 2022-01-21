@@ -1,0 +1,1 @@
+{"name":"Local: SumoftheRanges","url":"d:\\LeetCode-TaskList\\SumoftheRanges.cpp","tests":[{"id":1642749532730,"input":"1\n3\n1 2 3","output":"4"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\LeetCode-TaskList\\SumoftheRanges.cpp","group":"local","local":true}

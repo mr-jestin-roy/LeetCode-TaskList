@@ -2,11 +2,12 @@
 
 Linkedin = {
   config: {
-    scrollDelay: 1500,
-    actionDelay: 2000,
-    nextPageDelay: 2000,
+    // for people with high speed broadband (approx = 50 Mbps)
+    scrollDelay: 500,
+    actionDelay: 1000,
+    nextPageDelay: 500,
     // set to -1 for no limit
-    maxRequests: 100,
+    maxRequests: 200,
     totalRequestsSent: 0,
     // set to false to skip adding note in invites
     addNote: true,

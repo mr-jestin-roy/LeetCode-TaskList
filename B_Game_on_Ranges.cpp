@@ -8,31 +8,30 @@ using namespace std;
 
 void solve()
 {
-    int a,b,c;
-    cin >> a >> b >> c;
-    int d = 0;//common difference 
-    int A = 2 * b - c;
-    int B = (c + a) / 2;
-    int C = 2 * b - a;
-    if(A >= a && A%a ==0 && A!=0){
-        cout << "YES" << endl;
-        return;
-    }
+    int n;
+    cin >> n;
     
-    if(B >= b && (c-a)%2==0 &&B%b ==0 && B!=0){
-        cout << "YES" << endl;
-        return;
-    }
+    vector<pair<int, int>> arr(n);
 
-    if(C >= c && C%c ==0 && C!=0){
-        cout << "YES" << endl;
-        return;
+    for (int i = 0;i<n;i++){
+        cin >> arr[i].first >> arr[i].second;
     }
-    
-    
-    
-    cout << "NO" << endl;
-    
+    for (int i = 0; i < n;i++){
+        int l = arr[i].first, r = arr[i].second;
+        int maxleft = -1;
+        for (int j = 0; j < n;j++){
+            if(l == arr[j].first && r > arr[j].second){
+                maxleft = max(arr[j].second, maxleft);
+            }
+        
+        }
+        if(maxleft == -1){
+            cout << l << " " << r << " " << l << endl;
+        }
+        else{
+            cout << l << " " << r << " " << maxleft + 1 << endl;
+        }
+    }
 }
 
 int32_t main()

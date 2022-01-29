@@ -11,29 +11,34 @@ void solve()
     int n, k;
     cin >> n >> k;
 
-    if(k > (n+1)/2){
+    if(2*k > (n+1)){
         cout << -1 << endl;
         return;
     }
-    int pos = 0;
-
-    for (int i = 0; i < n;i++){
-        bool flag = false;
-        for (int j = 0; j < n;j++)
-        {
-            if(j == pos && i == pos && !flag && pos <= 2*(k-1))
-            {
-                cout << "R";
-                pos += 2;
-                flag = true;
-            }
-            else{
-                cout << ".";
-            }
+    else{
+        vector<int> pos(n, 0);
+        for (int i = 0; i < n && k > 0;i+=2,--k){
+            pos[i] = 1;
         }
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    if (i == j && pos[i])
+                    {
+                        cout << "R";
+                    }
+                    else
+                    {
+                        cout << ".";
+                    }
+                }
 
-        cout << endl;
+                cout << endl;
+            }
     }
+
+    
 }
 
 int32_t main()

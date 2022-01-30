@@ -6,6 +6,7 @@ using namespace std;
 #define endl "\n"
 #define inf 1e15
 
+
 void solve()
 {
     int n;

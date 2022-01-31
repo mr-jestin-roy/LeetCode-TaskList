@@ -43,7 +43,7 @@ int32_t main()
     fast;
     cout << fixed << setprecision(20);
     int t = 1;
-    // cin >> t;
+    cin >> t;
     for (int tt = 1; tt <= t; tt++)
     {
         // cout << "Case #" << tt << ": ";

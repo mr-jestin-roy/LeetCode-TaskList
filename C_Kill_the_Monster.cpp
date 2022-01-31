@@ -11,38 +11,22 @@ void solve()
 {
     int ha, da, hm, dm;
     cin >> ha >> da >> hm >> dm;
-    int k, w, a;
-    cin >> k >> w >> a;
-    int strikeA = 0, strikeM = 0;
-    if(hm > da){
-        da += k * w;
-        strikeA = hm / da;
-    }
-    else if(ha < dm){
-        ha = k * a;
-        strikeM = ha / dm;
-    }
-    
-    while(hm > 0 || ha > 0){
-        strikeA = hm / da;
-        strikeM = ha / dm;
-        hm -= da;
-        if(hm <= 0){
-           cout << "YES" << endl;
-           return;
-        }
-        ha -= dm;
-        if(ha <= 0){
-            cout << "NO" << endl;
+    int k, weaponUpgrade, armourUpgrade;
+    cin >> k >> weaponUpgrade >> armourUpgrade;
+    for (int i = 0; i <= k;i++){
+        int j = k - i;
+        int health = ha + i * armourUpgrade;
+        int attack = da + j * weaponUpgrade;
+
+        int requiredDamage = (hm + attack - 1) / attack;
+        int possibleDamage = (health + dm - 1) / dm;
+
+        if(requiredDamage <= possibleDamage){
+            cout << "YES" << endl;
             return;
         }
-        if(strikeA < strikeM){
-        cout << "YES" << endl;
-        return;
-        }
     }
-    
-    
+        cout << "NO" << endl;
 }
 
 int32_t main()

@@ -26,11 +26,12 @@ void solve()
         
         }
         if(maxleft == -1){
-            cout << l << " " << r << " " << l << endl;
+            cout << l << " " << r << " " << l;
         }
         else{
-            cout << l << " " << r << " " << maxleft + 1 << endl;
+            cout << l << " " << r << " " << maxleft + 1 ;
         }
+        cout << endl;
     }
 }
 

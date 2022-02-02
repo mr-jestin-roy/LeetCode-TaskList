@@ -9,29 +9,8 @@ void solve()
 {
     int x;
     cin >> x;
-    
-    // cout << "ANS is " << ans << endl;
-    // if(x == ans && x > 2){
-    //     cout << x-2<<" "<<x-1<<" "<<x << endl;
-    //     return;
-    // }
-    // if(x ==2){
-    //     cout << 2<<" "<< 3 <<" "<< 4 << endl;
-    //     return;
-    // }
-    int a = x, b = 0, c = x;
-    for (int i = 0; i < 31;i++){
-        if(!(c&((int)1<<i))){
-            c = c | ((int)1 << i);
-            break;
-        }
-    }
-    int ans = (a | b) & (b | c) & (c | a);
-    if(ans == x){
-        cout << a << " " << b << " " << c << endl;
-        return;
-    }
-    cout << -1 << endl;
+    cout << (x ^ 1) << " " << (x ^ 2) << " " << x << endl;
+    //easier alternative code inspired from Utkarsh Gupta Videp
 }
 
 

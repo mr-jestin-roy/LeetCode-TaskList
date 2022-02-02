@@ -8,40 +8,23 @@ using namespace std;
 void solve()
 {
     int n;
-    cin >> n;
-
     string s;
-    cin >> s;
+    cin>>n>>s;
 
-    if(n&1){
-        cout << "NO" << endl;
-        return;
-    }
-    vector<int> v(26, 0);
+    sort(s.begin(), s.end());
+    reverse(s.begin(), s.begin() + n / 2);
+
+    string t = s;
+    reverse(t.begin(), t.end());
+
     for (int i = 0; i < n;i++){
-        v[s[i] - 'a']++;
-    }
-    for(auto i:v){
-        if(i > n/2){
+        if(s[i] == t[i]){
             cout << "NO" << endl;
             return;
         }
     }
-    int itr1 = (n / 2), itr2 = (n / 2) - 1;
-    sort(s.begin(), s.end());
-    while(s[n/2]==s[itr1]){
-        itr1++;
-    }
-    int sz1 = itr1 - (n / 2);
-    string sub = s.substr((n / 2), sz1);
     cout << "YES" << endl;
-    for (int i = 0; i < (n / 2);i++){
-        cout << s[i];
-    }
-    for (int i = itr1; i < n;i++){
-        cout << s[i];
-    }
-    cout << sub << endl;
+    cout << s << endl;
 }
 
 

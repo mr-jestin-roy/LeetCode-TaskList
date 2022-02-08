@@ -24,7 +24,7 @@ void solve()
 
     if (flag)
     {
-        if (x & 1)
+        if (x & 10)
         {
             if (y & 1)
             {

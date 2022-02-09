@@ -44,7 +44,18 @@ bool helper(vector<int> &arr, int m)
 
 void solve()
 {
-   int
+   int n;
+   cin>>n;
+   set<int> s1;
+   set<int> s2;
+   for(int i=0;i<n;i++){
+       int x,y;
+       cin>>x>>y;
+       s1.insert(x);
+       s2.insert(y);
+   }
+
+   cout << s1.size() + s2.size() << endl;
 }
 
 int32_t main()

@@ -44,7 +44,10 @@ bool helper(vector<int> &arr, int m)
 
 void solve()
 {
-   int
+    int x, y;
+    cin>>x>>y;
+
+    cout << min(x / 2, y) << endl;
 }
 
 int32_t main()

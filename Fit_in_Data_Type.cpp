@@ -44,7 +44,10 @@ bool helper(vector<int> &arr, int m)
 
 void solve()
 {
-   int
+    int x, y;
+    cin>>x>>y;
+
+    cout << (y % (x+1))<< endl;
 }
 
 int32_t main()

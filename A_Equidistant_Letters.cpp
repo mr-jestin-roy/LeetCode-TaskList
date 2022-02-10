@@ -8,10 +8,10 @@ using namespace std;
 
 void solve()
 {
-    string s;
-    cin>>s;
-    sort(s.begin(),s.end());
-    cout << s << endl;
+    string s1;
+    cin>>s1;
+    sort(s1.begin(),s1.end());
+    cout << s1 << endl;
 }
 
 int32_t main()

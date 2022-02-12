@@ -27,19 +27,23 @@ void solve()
     cin >> n;
 
     vector<int> arr(n);
-    for(auto &i : arr)
+    for(auto &i : arr){
         cin >> i;
-
-    int sum = 0LL;
-    for (int i = 0;i<n;i++){
-        int cnt = 0;
-        for (int j = i; j < n;j++){
-            if(!arr[j])
-                cnt++;
-
-            sum += j - i + cnt + 1;
-        }
     }
+    int sum = 0LL;
+    bool even = false;
+    bool odd = false;
+    for (int i = 0;i<n;i++){
+        
+        if (i >= n - 1)
+            continue;
+        even = even || (arr[i] % 2 == 0);
+        odd = odd || ((arr[i] % 2 == 1) && arr[i] >= 2);
+
+        sum += (arr[i] + 1) / 2;
+    }
+    if(even || (odd && n>=4))
+        sum = -1;
     cout << sum << endl;
 }
 
@@ -52,6 +56,29 @@ int32_t main()
     for (int tt = 1; tt <= t; tt++)
     {
         // cout << "Case #" << tt << ": ";
-        solve();
+        
+    int n;
+    cin >> n;
+
+    vector<int> arr(n);
+    for(auto &i : arr){
+        cin >> i;
+    }
+    int sum = 0LL;
+    bool even = false;
+    bool odd = false;
+    for (int i = 0;i<n;i++){
+        
+        if (!i || i >= n - 1)
+            continue;
+        even = even || (arr[i] % 2 == 0);
+        odd = odd || ((arr[i] % 2 == 1) && arr[i] >= 2);
+
+        sum += (arr[i] + 1) / 2;
+    }
+    if(!even || (odd && n<4))
+        sum = -1;
+    cout << sum << endl;
+
     }
 }

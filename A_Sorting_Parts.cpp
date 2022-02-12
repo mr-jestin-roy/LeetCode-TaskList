@@ -1,38 +1,37 @@
 #include <bits/stdc++.h>
 using namespace std;
 #define fast ios_base::sync_with_stdio(false), cin.tie(NULL)
-// #define int long long int
+#define int long long int
 #define mod 998244353
 #define endl "\n"
 #define inf 1e15
-int arraySortedOrNot(vector<int> arr, int n)
-{
-    // Array has one or no element or the
-    // rest are already checked and approved.
-    if (n == 1 || n == 0)
-        return 1;
+#define ll              long long 
+#define pb              push_back
+#define all(v)          v.begin(),v.end()
+#define sz(a)           (ll)a.size()
+#define F               first
+#define S               second
+#define INF             2000000000000000000
+#define popcount(x)     __builtin_popcountll(x)
+#define pll             pair<ll,ll>
+#define pii             pair<int,int>
+#define ld              long double
  
-    // Unsorted pair found (Equal values allowed)
-    if (arr[n - 1] < arr[n - 2])
-        return 0;
- 
-    // Last pair was sorted
-    // Keep on checking
-    return arraySortedOrNot(arr, n - 1);
-}
+template<typename T, typename U> static inline void amin(T &x, U y){ if(y < x) x = y; }
+template<typename T, typename U> static inline void amax(T &x, U y){ if(x < y) x = y; }
 
 void solve()
 {
     int n;
     cin >> n;
 
-    vector<int> arr(n);
-    for(auto &i : arr)
+    vector<int> a(n);
+    for(auto &i : a)
         cin >> i;
 
-    int temp = *min_element(arr.begin(),arr.end());
-    // sort(arr.begin(), arr.end());
-    if((arraySortedOrNot(arr,n))){
+    auto arr = a;
+    sort(arr.begin(), arr.end());
+    if(a == arr){
         cout << "NO" << endl;
         return;
     }

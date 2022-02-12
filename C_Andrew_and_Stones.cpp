@@ -24,27 +24,50 @@ int arraySortedOrNot(vector<int> arr, int n)
 void solve()
 {
     int n;
-    cin >> n;
-
-    vector<int> arr(n);
-    for(auto &i : arr){
+	cin >> n;
+	vector<int> a(n);
+	for(auto &i : a){
         cin >> i;
     }
-    int sum = 0LL;
-    bool even = false;
-    bool odd = false;
-    for (int i = 0;i<n;i++){
-        
-        if (i >= n - 1)
-            continue;
-        even = even || (arr[i] % 2 == 0);
-        odd = odd || ((arr[i] % 2 == 1) && arr[i] >= 2);
-
-        sum += (arr[i] + 1) / 2;
-    }
-    if(even || (odd && n>=4))
-        sum = -1;
-    cout << sum << endl;
+	int c0 = 0, c1 = 0, cx = 0;
+	int sum = 0;
+	for (int i = 1; i + 1 < n; i++)
+	{
+		if (a[i] == 1) 
+		{
+			cx++;
+		}
+		if (a[i] % 2 == 0) c0++;
+		else c1++;
+		sum += a[i];
+	}
+	if ((c1 == cx || c1 == 1) && c0 == 0)
+	{
+        cout << -1 << endl;
+        return;
+	}
+	int ans = 0;
+	if (cx == c1)
+	{
+		if (c1 % 2)
+		{
+			ans++;
+			sum--;
+		}
+		ans += c1 / 2;
+		ans += sum / 2;
+	}
+	else
+	{
+		if (c1 % 2)
+		{
+			ans++;
+			sum--;
+		}
+		ans += c1 / 2;
+		ans += sum / 2;
+	}
+    cout << ans << endl;
 }
 
 int32_t main()
@@ -56,29 +79,7 @@ int32_t main()
     for (int tt = 1; tt <= t; tt++)
     {
         // cout << "Case #" << tt << ": ";
-        
-    int n;
-    cin >> n;
 
-    vector<int> arr(n);
-    for(auto &i : arr){
-        cin >> i;
-    }
-    int sum = 0LL;
-    bool even = false;
-    bool odd = false;
-    for (int i = 0;i<n;i++){
-        
-        if (!i || i >= n - 1)
-            continue;
-        even = even || (arr[i] % 2 == 0);
-        odd = odd || ((arr[i] % 2 == 1) && arr[i] >= 2);
-
-        sum += (arr[i] + 1) / 2;
-    }
-    if(!even || (odd && n<4))
-        sum = -1;
-    cout << sum << endl;
-
+        solve();
     }
 }

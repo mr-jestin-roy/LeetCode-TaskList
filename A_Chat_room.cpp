@@ -28,10 +28,10 @@ bool checkString(string s, string c = "hello",int i = 0, int j=0)
     }
 
     if(s[i] == c[j]){
-        checkString(s, c, ++i, ++j);
+        return checkString(s, c, ++i, ++j);
     }
     else{
-        checkString(s,c, ++i, j);
+        return checkString(s,c, ++i, j);
     }
 }
 

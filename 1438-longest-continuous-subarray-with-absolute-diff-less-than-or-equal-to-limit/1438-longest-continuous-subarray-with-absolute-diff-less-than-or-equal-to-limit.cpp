@@ -3,6 +3,7 @@ public:
     int longestSubarray(vector<int>& nums, int limit) {
         auto A = nums;
         deque<int> maxd, mind;
+        //Use two deques Time O(N)  Space O(N)
         int i = 0, j;
         for (j = 0; j < A.size(); ++j) {
             while (!maxd.empty() && A[j] > maxd.back()) maxd.pop_back();

@@ -1,21 +1,22 @@
 class Solution {
 public:
     int longestSubarray(vector<int>& nums, int limit) {
-        auto A = nums;
-        deque<int> maxd, mind;
-        //Use two deques Time O(N)  Space O(N)
-        int i = 0, j;
-        for (j = 0; j < A.size(); ++j) {
-            while (!maxd.empty() && A[j] > maxd.back()) maxd.pop_back();
-            while (!mind.empty() && A[j] < mind.back()) mind.pop_back();
-            maxd.push_back(A[j]);
-            mind.push_back(A[j]);
-            if (maxd.front() - mind.front() > limit) {
-                if (maxd.front() == A[i]) maxd.pop_front();
-                if (mind.front() == A[i]) mind.pop_front();
-                ++i;
+        // Use one tree map can easily get the maximum and the minimum at the same time.
+        // In java, we can use TreeMap to count elements.
+        // In cpp, it suports multi treeset, that's even better.
+
+        // Time O(NogN)
+        int i=0,j;
+        multiset<int> m; //first time with multiset
+        for(j=0; j<nums.size();j++){
+            m.insert(nums[j]);
+            if(*m.rbegin() - *m.begin() > limit){
+                m.erase(m.find(nums[i]));   //Remove only one instance of element from multiset having same value
+                i++;
             }
         }
+        //return the longest length subarray with given condition
         return j - i;
+    
     }
 };

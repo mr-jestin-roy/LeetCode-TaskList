@@ -20,6 +20,9 @@ using namespace std;
 
 void solve()
 {
+    //you can solve it using the complex method 
+    //but the easier method is to compute all 6 combinations
+    // & compute the maximum from there
     int a, b, c, maxx = 0;
     cin >> a >> b >> c;
     if(a + b + c > maxx)
@@ -34,7 +37,7 @@ void solve()
         maxx = a * (b + c);
     if(a * b * c > maxx)
         maxx = a * b * c;
-
+//6 combination because of 3 places & 2 choices each = 3x2 = 6
     cout << maxx;
 }
 

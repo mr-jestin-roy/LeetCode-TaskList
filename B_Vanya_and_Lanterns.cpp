@@ -12,6 +12,7 @@ void solve()
     double a[n];
     for (int i = 0; i < n;i++){
         cin >> a[i];
+
     }
     sort(a, a + n);
     double ans = max(a[0], k - a[n - 1]);
@@ -19,7 +20,7 @@ void solve()
 
         ans = max(ans, ((double)(a[i + 1] - a[i])) / 2.0);
     }
-//
+//to set the precision to 10 floating decimal points
     cout << fixed << setprecision(10) << ans << endl;
 }
 

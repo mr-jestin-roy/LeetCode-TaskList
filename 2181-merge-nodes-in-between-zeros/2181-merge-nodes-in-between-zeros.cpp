@@ -11,6 +11,7 @@
 class Solution {
 public:
     ListNode* mergeNodes(ListNode* head) {
+        //Iterative Approach
         head = head->next;
         ListNode* start = head;
         while(start){

@@ -1,44 +1,93 @@
-#include <bits/stdc++.h>
+#include "bits/stdc++.h"
 using namespace std;
-#define fast ios_base::sync_with_stdio(false), cin.tie(NULL)
-#define int long long int
-#define mod 998244353
-#define endl "\n"
-#define inf 1e15
-void solve()
+#define int long long
+#define pb push_back
+#define ppb pop_back
+#define pf push_front
+#define ppf pop_front
+#define all(x) (x).begin(), (x).end()
+#define uniq(v) (v).erase(unique(all(v)), (v).end())
+#define sz(x) (int)((x).size())
+#define fr first
+#define sc second
+#define pii pair<int, int>
+#define rep(i, a, b) for (int i = a; i < b; i++)
+#define mem1(a) memset(a, -1, sizeof(a))
+#define mem0(a) memset(a, 0, sizeof(a))
+#define ppc __builtin_popcount
+#define ppcll __builtin_popcountll
+
+template <typename T1, typename T2>
+istream &operator>>(istream &in, pair<T1, T2> &a)
 {
-    int n,m;
-    cin >> n>>m;
-    vector<int> a(m);
-
-    for(auto &i : a){
-        cin >> i;
-    }
-
-    int res = a[0];
-    for (int i = 1; i < m;i++){
-        int back = a[i - 1];
-        if(a[i] >= back){
-            res += (a[i] - back);
-        }
-        else{
-            res += ((n - back) + a[i]);
-        }
-
-    }
-    cout << res-1 << endl;
+    in >> a.fr >> a.sc;
+    return in;
+}
+template <typename T1, typename T2>
+ostream &operator<<(ostream &out, pair<T1, T2> a)
+{
+    out << a.fr << " " << a.sc;
+    return out;
+}
+template <typename T, typename T1>
+T amax(T &a, T1 b)
+{
+    if (b > a)
+        a = b;
+    return a;
+}
+template <typename T, typename T1>
+T amin(T &a, T1 b)
+{
+    if (b < a)
+        a = b;
+    return a;
 }
 
+const long long INF = 1e18;
+const int32_t M = 1e9 + 7;
+const int32_t MM = 998244353;
 
-int32_t main()
+const int N = 0;
+
+void solve()
 {
-    fast;
-    cout << fixed << setprecision(20);
+    int n;
+    vector<int> a(3);
+    cin >> n >> a[0] >> a[1] >> a[2];
+    sort(all(a));
+    //equation formation
+    int p = 0, q, r, res = 0, x = a[0], y = a[1], z = a[2];
+
+    while((p*x) <= n){
+        q = 0;
+        while((p*x + q*y) <= n){
+            r = (n - (p*x + q*y))/z;
+            if((p*x + q*y + r*z) == n)
+                res = max(res, p + q + r);
+            //equation coefficent sum is the ANSWER
+            q++;
+        }
+        p++;
+    }
+    cout << res << endl;
+}
+signed main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(0);
+    cout.tie(0);
+//freopen("input.txt", "r", stdin);
+//freopen("output.txt", "w", stdout);
+#ifdef SIEVE
+    sieve();
+#endif
+#ifdef NCR
+    init();
+#endif
     int t = 1;
     // cin >> t;
-    for (int tt = 1; tt <= t; tt++)
-    {
-        // cout << "Case #" << tt << ": ";
+    while (t--)
         solve();
-    }
+    return 0;
 }

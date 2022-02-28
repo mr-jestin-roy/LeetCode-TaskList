@@ -1,4 +1,5 @@
-
+// Author:: Jestin Roy
+// Institution:: Mar Athanasius College of Engineering
 #include <bits/stdc++.h>
 using namespace std;
 // #define int long long
@@ -34,26 +35,56 @@ void sieve(){
                 prime[i] = false;
  }
 
-
+bool can(int m,int s){
+    return (s >= 0 && s <= 9 * m);
+}
 void solve()
 {
-   int n,q;
-   cin >> n;
-   vector<int> a(n);
-   
-    for(auto &x : a)
-        cin >> x;
-
-   sort(a.begin(),a.end());
-
-   cin >> q;
-   while (q--)
-   {
-       int x;
-       cin >> x;
-       int distance = upper_bound(a.begin(), a.end(), x) - a.begin();
-       cout << distance << endl;
+   int m,s;
+   cin >> m >> s;
+   //base cases 
+   if(m==1 && s==0){
+       cout << 0 << " " << 0 << endl;
+       return;
+   }
+   if(s==0 || s > 9*m){
+       cout << -1 << " " << -1 << endl;
+       return;
+   }
+    if(!can(m,s)){
+        cout << "-1 -1";
+        return;
     }
+
+
+   int sum = s;
+   string minn = "";
+
+   for (int i = 0; i < m;i++){
+       for (int d = 0; d < 10;d++){
+           if((i >0 || d > 0 ||(m==1 && d==0)) &&  (can(m-i-1,sum - d)))
+           {
+               cout << d;
+               //    minn += char('0' + d);
+               sum -= d;
+               break;
+           }
+       }
+   }
+   sum = s;
+   cout << " ";
+   //now maximum number
+   for (int i = 0; i < m;i++){
+       if(sum >= 9)
+       {
+           cout << 9;
+           sum -= 9;
+       }
+       else{
+           cout << sum;
+           sum = 0; //reset the sum temp variable
+       }
+   }
 }
 
 int32_t main()

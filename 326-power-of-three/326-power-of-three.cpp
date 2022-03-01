@@ -1,9 +1,10 @@
 class Solution {
 public:
     bool isPowerOfThree(int n) {
-    if(n > 1){
-        while(n%3 ==0) n/= 3;
-    }
-    return n==1;
+     while(n>1){
+         if(n%3 != 0) return false;
+         n/=3;
+     }
+        return n<=0 ? false: true;
     }
 };

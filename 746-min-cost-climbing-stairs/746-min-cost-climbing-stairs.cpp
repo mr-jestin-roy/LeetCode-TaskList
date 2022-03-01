@@ -1,6 +1,7 @@
 class Solution {
 public:
     //brute force Method== All possibilties are considered
+    //prefic sum method 
     int minCostClimbingStairs(vector<int>& cost) {
         int n = cost.size();
         for(int i=2;i<n;i++){

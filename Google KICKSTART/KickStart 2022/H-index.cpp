@@ -25,9 +25,9 @@ void solve()
         currH = prevH + 1;
         hash[a[i]]++;
         if(a[i] >= currH)
-            cnt++;
+            cnt++;  //count the number of papers with more than currH
         
-        if(cnt >= currH){
+        if(cnt >= currH){ //atleast currH citations
             cout << currH << " ";
             ++prevH;
             cnt -= hash[currH];

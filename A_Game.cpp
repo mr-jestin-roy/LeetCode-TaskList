@@ -57,17 +57,16 @@ void solve()
     vector<int> a(n);
     for(auto &i:a)
         cin >> i;
-    int cnt0 = 0, sum = 0;
-    for (int i = 0; i < n;i++){
-        if(a[i]==0){
-            cnt0++;
-        }
-        else{
-            sum += cnt0 * 2;
-            cnt0 = 0;
-        }
+    int cnt0 = 0, ind = n - 1;
+    while(ind >= 0 && a[ind])
+        ind--;
+    if(ind == -1){
+        cout << 0 << endl;
+        return;
     }
-    cout << sum << endl;
+    while(a[cnt0])
+        cnt0++;
+    cout << (ind - cnt0 + 2) << endl;
 }
 signed main()
 {

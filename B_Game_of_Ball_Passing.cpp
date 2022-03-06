@@ -55,24 +55,19 @@ void solve()
     int n;
     cin >> n;
     vector<int> a(n);
-    int cnt0 = 0;
+    int sum = 0;
     for(auto &i:a){
         cin >> i;
-        if(i == 0)
-            cnt0++;
+        sum += i;
     }
-    n -= cnt0;
-    if(n==0){
+    
+    if(sum==0){
         cout << 0 << endl;
         return;
     }
-    if(n&1){
-        cout << 2 << endl;
-        return;
-    }
-    else{
-        cout << 1 << endl;
-    }
+    int mx = *max_element(all(a));
+    cout << (1 + max(0LL, mx - sum + (mx - 1))) << endl;
+    
 }
 signed main()
 {

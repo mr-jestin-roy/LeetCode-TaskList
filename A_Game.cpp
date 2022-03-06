@@ -58,15 +58,15 @@ void solve()
     for(auto &i:a)
         cin >> i;
     int cnt0 = 0, ind = n - 1;
-    while(ind >= 0 && a[ind])
+    while(ind >= 0 && a[ind])   //first zero encountered from the end
         ind--;
     if(ind == -1){
         cout << 0 << endl;
         return;
     }
-    while(a[cnt0])
+    while(a[cnt0])  //first zero encountered from the start
         cnt0++;
-    cout << (ind - cnt0 + 2) << endl;
+    cout << (ind - cnt0 + 2) << endl;  //gap between last & first zero plus two 
 }
 signed main()
 {

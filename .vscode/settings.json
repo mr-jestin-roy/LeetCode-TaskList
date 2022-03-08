@@ -23,6 +23,8 @@
     "iostream": "cpp",
     "cmath": "cpp",
     "queue": "cpp",
-    "stack": "cpp"
+    "stack": "cpp",
+    "chrono": "cpp",
+    "complex": "cpp"
   }
 }

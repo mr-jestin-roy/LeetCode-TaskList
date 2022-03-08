@@ -25,6 +25,10 @@
     "queue": "cpp",
     "stack": "cpp",
     "chrono": "cpp",
-    "complex": "cpp"
+    "complex": "cpp",
+    "array": "cpp",
+    "bitset": "cpp",
+    "random": "cpp",
+    "xtree": "cpp"
   }
 }

@@ -28,6 +28,8 @@ int32_t main()
         vector<int> arr(n); 
         for(auto &i:arr)
             cin >> i;
+
+        //WE USE MULTISET BECAUSE IT WORKS LIKE SET BUT ALLOWS DUPLICATES
         multiset<int> s;
         sort(all(arr));
         for(auto v:arr){

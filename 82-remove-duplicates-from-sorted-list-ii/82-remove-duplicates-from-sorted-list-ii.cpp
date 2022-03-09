@@ -11,6 +11,7 @@
 class Solution {
 public:
     ListNode* deleteDuplicates(ListNode* head) {
+        if(head == NULL) return NULL;
         ListNode* dummy = new ListNode(0); //dummy linked list
         dummy->next = head;
         ListNode* cur = dummy;

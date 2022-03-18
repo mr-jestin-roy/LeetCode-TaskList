@@ -12,6 +12,15 @@ using namespace std;
 void solve()
 {
     //start solving the problem from here on
+    int r, c; cin>>r>>c;
+
+    vector<vector<int>>(r, vector<int>(c));
+    
+    for (int i = 0; i < r;i++){
+        for (int j = 0; j < c;j++){
+            cin >> a[i][j];
+        }
+    }
 }
 
 int32_t main()

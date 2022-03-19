@@ -55,32 +55,30 @@ const int N = 0;
 
 void solve()
 {
-    int n;
+    string n;
     cin >> n;
-    vector<int> a(n), ans;
-    int cnt0 = 0;
-    for (int i = 0; i < n; i++)
+    bool flag = false;
+    for (int i = 0; i < n.size() - 1; i++)
     {
-        cin >> a[i];
-        if (!a[i])
-            cnt0++;
-    }
-    int cnt1 = n - cnt0;
-    if (cnt0 >= n / 2)
-    {
-        cout << cnt0 << '\n';
-        for (int i = 0; i < cnt0; i++)
-            cout << 0 << ' ';
-    }
-    else
-    {
-        cout << cnt1 - cnt1 % 2 << '\n';
-        for (int i = 0; i < cnt1 - cnt1 % 2; i++)
+        if ((n[i] - '0') % 2 == 0)
         {
-            cout << 1 << ' ';
+            if (n[n.size() - 1] % 2 == 0)
+            {
+                cout << "YES" << endl;
+                return;
+            }
+        }
+        else
+        {
+            if (n[n.size() - 1] % 2 == 1)
+            {
+                cout << "YES" << endl;
+                return;
+            }
         }
     }
-    cout << '\n';
+
+    cout << "NO" << endl;
 }
 signed main()
 {

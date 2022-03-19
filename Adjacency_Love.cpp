@@ -55,32 +55,68 @@ const int N = 0;
 
 void solve()
 {
-    int n;
+    long long n;
     cin >> n;
-    vector<int> a(n), ans;
-    int cnt0 = 0;
-    for (int i = 0; i < n; i++)
+    vector<long long> odd;
+    vector<long long> even;
+    for (long long i = 0; i < n; i++)
     {
-        cin >> a[i];
-        if (!a[i])
-            cnt0++;
+        long long y;
+        cin >> y;
+        if (y & 1)
+        {
+            odd.push_back(y);
+        }
+        else
+        {
+            even.push_back(y);
+        }
     }
-    int cnt1 = n - cnt0;
-    if (cnt0 >= n / 2)
+    if (odd.size() == n && (n & 1))
     {
-        cout << cnt0 << '\n';
-        for (int i = 0; i < cnt0; i++)
-            cout << 0 << ' ';
+        cout << -1 << endl;
+    }
+    else if (odd.size() == 1 && even.size() > 0)
+    {
+        cout << -1 << endl;
+    }
+    else if (odd.size() == 1 && even.size() == 0)
+    {
+        cout << odd[0] << endl;
+    }
+    else if (odd.size() >= 2)
+    {
+        if (odd.size() & 1)
+        {
+            cout << odd[0] << " ";
+
+            for (long long i = 0; i < even.size(); i++)
+            {
+                cout << even[i] << " ";
+            }
+            for (long long i = 1; i < odd.size(); i++)
+            {
+                cout << odd[i] << " ";
+            }
+            cout << endl;
+        }
+        else
+        {
+            for (long long i = 0; i < even.size(); i++)
+            {
+                cout << even[i] << " ";
+            }
+            for (long long i = 0; i < odd.size(); i++)
+            {
+                cout << odd[i] << " ";
+            }
+            cout << endl;
+        }
     }
     else
     {
-        cout << cnt1 - cnt1 % 2 << '\n';
-        for (int i = 0; i < cnt1 - cnt1 % 2; i++)
-        {
-            cout << 1 << ' ';
-        }
+        cout << -1 << endl;
     }
-    cout << '\n';
 }
 signed main()
 {

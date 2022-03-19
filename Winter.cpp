@@ -3,7 +3,7 @@
 #pragma GCC target("avx,avx2,fma")
 #include "bits/stdc++.h"
 using namespace std;
-#define int long long
+#define ll long long
 #define pb push_back
 #define ppb pop_back
 #define pf push_front
@@ -52,35 +52,56 @@ const int32_t M = 1e9 + 7;
 const int32_t MM = 998244353;
 
 const int N = 0;
-
+vector<ll> v[200005];
 void solve()
 {
-    int n;
-    cin >> n;
-    vector<int> a(n), ans;
-    int cnt0 = 0;
-    for (int i = 0; i < n; i++)
+    ll n, m, Q, x, y;
+    cin >> n >> m >> Q;
+    while (m--)
     {
-        cin >> a[i];
-        if (!a[i])
-            cnt0++;
+        cin >> x >> y;
+        v[x].pb(y);
+        v[y].pb(x);
     }
-    int cnt1 = n - cnt0;
-    if (cnt0 >= n / 2)
+    map<ll, ll> mp;
+    queue<ll> q;
+    while (Q--)
     {
-        cout << cnt0 << '\n';
-        for (int i = 0; i < cnt0; i++)
-            cout << 0 << ' ';
-    }
-    else
-    {
-        cout << cnt1 - cnt1 % 2 << '\n';
-        for (int i = 0; i < cnt1 - cnt1 % 2; i++)
+        cin >> x >> y;
+        if (x == 3)
         {
-            cout << 1 << ' ';
+            if (mp[y] == 1)
+                cout << "YES\n";
+            else
+                cout << "NO\n";
+        }
+        else if (x == 1)
+        {
+            if (mp[y] == 0)
+                q.push(y);
+            mp[y] = 1;
+        }
+        else
+        {
+            for (int i = 0; i < y && !q.empty(); i++)
+            {
+                int k = q.size();
+                while (k--)
+                {
+                    ll u = q.front();
+                    q.pop();
+                    for (auto x : v[u])
+                    {
+                        if (mp[x] == 0)
+                        {
+                            mp[x] = 1;
+                            q.push(x);
+                        }
+                    }
+                }
+            }
         }
     }
-    cout << '\n';
 }
 signed main()
 {
@@ -96,7 +117,7 @@ signed main()
     init();
 #endif
     int t = 1;
-    cin >> t;
+    // cin >> t;
     while (t--)
         solve();
     return 0;

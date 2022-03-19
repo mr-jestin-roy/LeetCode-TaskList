@@ -29,6 +29,7 @@
     "array": "cpp",
     "bitset": "cpp",
     "random": "cpp",
-    "xtree": "cpp"
+    "xtree": "cpp",
+    "map": "cpp"
   }
 }

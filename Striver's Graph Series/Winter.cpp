@@ -3,7 +3,7 @@
 #pragma GCC target("avx,avx2,fma")
 #include "bits/stdc++.h"
 using namespace std;
-#define int long long
+#define ll long long
 #define pb push_back
 #define ppb pop_back
 #define pf push_front
@@ -52,72 +52,66 @@ const int32_t M = 1e9 + 7;
 const int32_t MM = 998244353;
 
 const int N = 0;
+// adjacency vector for graph
+vector<int> v[2000005];
 
 void solve()
 {
-    long long n;
-    cin >> n;
-    vector<long long> odd;
-    vector<long long> even;
-    for (long long i = 0; i < n; i++)
+    int n, m, queries, x, y;
+    cin >> n >> m >> queries;
+    while (m--)
     {
-        long long y;
-        cin >> y;
-        if (y & 1)
+        cin >> x >> y;
+        v[x].push_back(y);
+        v[y].push_back(x);
+        // UNDIRECTED GRAPH
+    }
+    map<int, int> mp; // to keep track of flag status on each node
+    queue<int> q;
+    while (queries--)
+    {
+        // taking query type : node
+        cin >> x >> y;
+        if (x == 3)
+        { // TYPE 3: CHECK STATUS
+            if (mp[y] == 1)
+            { // FROZEN
+                cout << "YES" << endl;
+            }
+            else
+            {
+                cout << "NO" << endl;
+            }
+        }
+        else if (x == 1) // TYPE 1 : FREEZE UNFROZEN MENTIONED NODE
         {
-            odd.push_back(y);
+            if (mp[y] == 0)
+                q.push(y);
+
+            mp[y] = 1;
         }
         else
         {
-            even.push_back(y);
+            // type two , let (t+1) seconds pass,
+            //  every node at t distance is frozen
+            for (int i = 0; i < y && !q.empty; i++)
+            {
+                int k = q.size();
+                while (k--)
+                {
+                    int u = q.front();
+                    q.pop();
+                    for (auto x : v[u])
+                    { // ADJACENCY LIST
+                        if (mp[x] == 0)
+                        { // MARK ALL CONNECTED NODES FROZEN
+                            mp[x] = 1;
+                            q.push(x);
+                        }
+                    }
+                }
+            }
         }
-    }
-
-    //multiple edge cases
-    if (odd.size() == n && (n & 1))
-    {
-        cout << -1 << endl;
-    }
-    else if (odd.size() == 1 && even.size() > 0)
-    {
-        cout << -1 << endl;
-    }
-    else if (odd.size() == 1 && even.size() == 0)
-    {
-        cout << odd[0] << endl;
-    }
-    else if (odd.size() >= 2)
-    {
-        if (odd.size() & 1)
-        {
-            cout << odd[0] << " ";
-
-            for (long long i = 0; i < even.size(); i++)
-            {
-                cout << even[i] << " ";
-            }
-            for (long long i = 1; i < odd.size(); i++)
-            {
-                cout << odd[i] << " ";
-            }
-            cout << endl;
-        }
-        else
-        {
-            for (long long i = 0; i < even.size(); i++)
-            {
-                cout << even[i] << " ";
-            }
-            for (long long i = 0; i < odd.size(); i++)
-            {
-                cout << odd[i] << " ";
-            }
-            cout << endl;
-        }
-    }
-    else
-    {
-        cout << -1 << endl;
     }
 }
 signed main()
@@ -134,7 +128,7 @@ signed main()
     init();
 #endif
     int t = 1;
-    cin >> t;
+    // cin >> t;
     while (t--)
         solve();
     return 0;

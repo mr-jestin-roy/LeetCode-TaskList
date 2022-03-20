@@ -52,48 +52,59 @@ const int32_t M = 1e9 + 7;
 const int32_t MM = 998244353;
 
 const int N = 0;
-vector<ll> v[200005];
+// adjacency vector for graph
+vector<int> v[2000005];
+
 void solve()
 {
-    ll n, m, Q, x, y;
-    cin >> n >> m >> Q;
+    int n, m, queries, x, y;
+    cin >> n >> m >> queries;
     while (m--)
     {
         cin >> x >> y;
-        v[x].pb(y);
-        v[y].pb(x);
+        v[x].push_back(y);
+        v[y].push_back(x);
+        // UNDIRECTED GRAPH
     }
-    map<ll, ll> mp;
-    queue<ll> q;
-    while (Q--)
+    map<int, int> mp; // to keep track of flag status on each node
+    queue<int> q;
+    while (queries--)
     {
+        // taking query type : node
         cin >> x >> y;
         if (x == 3)
-        {
+        { // TYPE 3: CHECK STATUS
             if (mp[y] == 1)
-                cout << "YES\n";
+            { // FROZEN
+                cout << "YES" << endl;
+            }
             else
-                cout << "NO\n";
+            {
+                cout << "NO" << endl;
+            }
         }
-        else if (x == 1)
+        else if (x == 1) // TYPE 1 : FREEZE UNFROZEN MENTIONED NODE
         {
             if (mp[y] == 0)
                 q.push(y);
+
             mp[y] = 1;
         }
         else
         {
+            // type two , let (t+1) seconds pass,
+            //  every node at t distance is frozen
             for (int i = 0; i < y && !q.empty(); i++)
             {
                 int k = q.size();
                 while (k--)
                 {
-                    ll u = q.front();
+                    int u = q.front();
                     q.pop();
                     for (auto x : v[u])
-                    {
+                    { // ADJACENCY LIST
                         if (mp[x] == 0)
-                        {
+                        { // MARK ALL CONNECTED NODES FROZEN
                             mp[x] = 1;
                             q.push(x);
                         }

@@ -31,7 +31,7 @@ typedef long long ll;
 typedef unsigned long long ull;
 typedef long double lld;
 
-// asumptions for the question
+// assumptions for the question
 // on multidimensional array dp
 ll dp[14][101][101][2][2];
 int required = 0;

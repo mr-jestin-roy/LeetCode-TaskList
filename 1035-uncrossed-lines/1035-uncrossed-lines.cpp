@@ -1,6 +1,7 @@
 class Solution {
 public:
     int maxUncrossedLines(vector<int>& nums1, vector<int>& nums2) {
+        //longest common sequence DP question
         int n = nums1.size(), m = nums2.size();
         vector<vector<int>> dp(n+1, vector<int> (m+1));
         for(int i= 1;i<=n;i++){

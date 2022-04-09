@@ -52,12 +52,30 @@ const int32_t M = 1e9 + 7;
 const int32_t MM = 998244353;
 
 const int N = 0;
-
+int gcd (int a, int b) {
+    while (b) {
+        a %= b;
+        swap(a, b);
+    }
+    return a;
+}
 void solve()
 {
     int a,b;
     cin>>a>>b;
-    cout<<max(a,b)%min(a,b)<<endl;
+    if(a == 1 || b==1){
+        cout<<-1<<endl;
+        return;
+    }
+    if(gcd(a,b) == 1){
+        cout<<1<<endl;
+        return;
+    }
+    else{
+        cout<<0<<endl;
+    }
+    
+
 
 }
 signed main()

@@ -100,7 +100,7 @@ signed main()
         int ans =0;
         int pans =32768 - x;
         int ch = (32768%x);
-
+        
         
         ans = min(pans, ch);
         cout<<ans<<" ";

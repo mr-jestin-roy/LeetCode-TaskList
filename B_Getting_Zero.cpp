@@ -51,22 +51,40 @@ const long long INF = 1e18;
 const int32_t M = 1e9 + 7;
 const int32_t MM = 998244353;
 
-const int N = 0;
-unsigned int nextPowerOf2(unsigned int n)
-{
-    n--;
-    n |= n >> 1;
-    n |= n >> 2;
-    n |= n >> 4;
-    n |= n >> 8;
-    n |= n >> 16;
-    n++;
-    return n;
-}
+const int N = 32768 + 5;
+
+int ans[N];
+int a[N];
+
 void solve()
 {
+    int n;
+    cin>>n;
+    for(int i=1;i<=n;i++) cin>>a[i];
+    for(int i=1;i<=32768;i++){
+        int x = i;
+        int r = 0;
+        while(x && x%2==0){ //marking the multiples of 2
+            r++;
+            x/=2;
+        }
+        ans[i]=r;
+    }
     
-   
+    for(int i=1;i<=n;i++){
+        if(a[i] == 0){
+            cout<<0<<" ";
+            continue;
+        }
+        int cur = INT_MAX;
+        cur = min(cur, 32768-a[i]);
+        for(int j=a[i];j <= a[i]+15;j++){
+            if(j <= 32768 && j!=0){
+                cur = min(cur, (j-a[i]+ 15-ans[j]));
+            }
+        }
+        cout<<cur<<" ";
+    }
 }
 signed main()
 {
@@ -81,32 +99,9 @@ signed main()
 #ifdef NCR
     init();
 #endif
-    int power[16];
-    power[0] = 1;
-    for(int i=1;i<=15;i++){
-        power[i] = power[i-1]<<1; 
-    }
     int t = 1;
     // cin >> t;
     while (t--)
-    {
-    int n;
-    cin>>n;
-    vector<int> a(n);
-    for(auto &i:a) cin>>i;
-    
-   
-    for(auto x:a){
-        int ans =0;
-        int pans =32768 - x;
-        int ch = (32768%x);
-        
-        
-        ans = min(pans, ch);
-        cout<<ans<<" ";
-        
-    }
-    cout<<endl;
-    }
+        solve();
     return 0;
 }

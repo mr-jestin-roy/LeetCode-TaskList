@@ -1,6 +1,8 @@
 class Solution {
 public:
     string decodeString(string s) {
+        //two stack method 
+        //space complexity is O(2N)
         stack<string> chars;
         stack<int> nums;
         string ans;

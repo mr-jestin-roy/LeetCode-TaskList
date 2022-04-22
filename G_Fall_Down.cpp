@@ -55,26 +55,45 @@ const int N = 0;
 
 void solve()
 {
-    int n;
-    cin>>n;
-    string s;
-    cin>>s;
-    bool ok1 =true, ok2 = true;
-    for(int i=0;i < s.size();i++){
-        if(s[i] == 'R')
-            ok1 = false;
-        else if(s[i] == 'B')
-            ok2 = false;
-        
-        if(s[i]=='W' || i == s.size()-1){
-            if(ok1 != ok2){
-                cout<<"NO"<<endl;
-                return;
-            }
-            ok1 = ok2 = true;
-        }
-    }
-    cout<< "YES" <<endl;
+    int n,m;
+    cin>>n>>m;
+
+   vector<string> grid(n);
+   for(int i=0;i<n;i++){
+       cin>>grid[i];
+   }
+
+   vector<string> ans(n, string(m,'.'));
+
+   for(int j=0;j<m;j++){
+       int cnt =0, r=n;
+       for(int i=n-1;i>=0;i--){
+           if(grid[i][j] == 'o'){
+               ans[i][j] = 'o';
+
+               for(int k=0; k < cnt;k++){
+                   --r;
+                   ans[r][j] = '*';
+               }
+               r = i;
+               cnt = 0;
+           }
+           else if(grid[i][j] == '*'){
+               cnt++;
+           }
+           else{
+               assert(grid[i][j] == '.');
+           }
+       }
+       for(int k=0; k < cnt; k++){
+           --r;
+           ans[r][j] = '*';
+       }
+   }
+   for(int i=0;i<n;i++){
+       cout<< ans[i] <<endl;
+   }
+   cout<<endl;
 }
 signed main()
 {

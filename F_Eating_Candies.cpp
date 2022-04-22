@@ -1,7 +1,7 @@
 #pragma GCC optimize("Ofast")
 #pragma GCC optimize ("O3")
 #pragma GCC target("avx,avx2,fma")
-#include <bits/stdc++.h>
+#include "bits/stdc++.h"
 using namespace std;
 #define int long long
 #define pb push_back
@@ -57,24 +57,26 @@ void solve()
 {
     int n;
     cin>>n;
-    string s;
-    cin>>s;
-    bool ok1 =true, ok2 = true;
-    for(int i=0;i < s.size();i++){
-        if(s[i] == 'R')
-            ok1 = false;
-        else if(s[i] == 'B')
-            ok2 = false;
+    vector<int> a(n);
+    
+    for(auto &i:a) cin>>i;
+    int ansCnt = 0, cnt =0;
+    int i=0,j=n-1;
+    int suml =0, sumr=0;
+    while(i<=j+1){
+        if(suml == sumr)
+            ansCnt = cnt;
         
-        if(s[i]=='W' || i == s.size()-1){
-            if(ok1 != ok2){
-                cout<<"NO"<<endl;
-                return;
-            }
-            ok1 = ok2 = true;
+        if(suml > sumr){
+            sumr += a[j--];
         }
+        else{
+            suml += a[i++];
+        }
+        cnt++;
     }
-    cout<< "YES" <<endl;
+    cout<< ansCnt <<endl;
+
 }
 signed main()
 {

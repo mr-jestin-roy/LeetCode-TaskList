@@ -55,31 +55,22 @@ const int N = 0;
 
 void solve()
 {
-    int n;
-    cin>>n;
-    vector<int> a(n);
-    vector<int> odd;
-    vector<int> ev;
-    for(auto &i:a){
-        cin>>i;
-        if(i&1){
-            od.pb(i);
-        }
-        else
-            ev.pb(i);
-    }
-    int lev = ev.size();
-    int lod = od.size();
-    sort(all(od));
-    sort(all(ev));
+    int a,b,c,x,y;
+    cin>>a>>b>>c>>x>>y;
 
-    //alice bob both even
-    int al1 = 0, bb1 = 0, k = 0 , oo = 1 , ee = 0;
-    int ei = lev - 1, oi = lod -1;
-    while(1){
-        if(k%2 == 0 && oo == 1 && ei >= 0){
-            al1 += ev[ei];
-        }
+    x -= a;
+    if(x < 0){
+        x = 0;
+    }
+    y -= b;
+    if(y <0){
+        y =0;
+    }
+    if(x+y <= c && x >= 0 && y >= 0){
+        cout<<"YES"<<endl;
+    }  
+    else{
+        cout<<"NO"<<endl;
     }
 }
 signed main()

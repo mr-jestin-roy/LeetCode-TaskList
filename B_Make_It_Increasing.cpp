@@ -58,29 +58,33 @@ void solve()
     int n;
     cin>>n;
     vector<int> a(n);
-    vector<int> odd;
-    vector<int> ev;
-    for(auto &i:a){
+    for(auto &i:a)
         cin>>i;
-        if(i&1){
-            od.pb(i);
-        }
-        else
-            ev.pb(i);
+    if(n==1){
+        cout<<0<<endl;
+        return;
     }
-    int lev = ev.size();
-    int lod = od.size();
-    sort(all(od));
-    sort(all(ev));
-
-    //alice bob both even
-    int al1 = 0, bb1 = 0, k = 0 , oo = 1 , ee = 0;
-    int ei = lev - 1, oi = lod -1;
-    while(1){
-        if(k%2 == 0 && oo == 1 && ei >= 0){
-            al1 += ev[ei];
+    
+    int count = 0;
+        for (int i = n-2;i>-1;i--) {
+            while(a[i+1] <= a[i] && a[i]) {
+                a[i] /= 2;
+                count++;
+            }
         }
-    }
+        bool fail = false;
+        for (int i = 0;i<n-1;i++) {
+            if (a[i+1] <= a[i]) {
+                fail = true;
+            }
+        }
+        if (fail) {
+            cout << "-1\n";
+        }
+        else {
+            cout << count << "\n";
+        }
+   
 }
 signed main()
 {

@@ -53,34 +53,32 @@ const int32_t MM = 998244353;
 
 const int N = 0;
 
-void solve()
-{
-    int n;
-    cin>>n;
-    vector<int> a(n);
-    vector<int> odd;
-    vector<int> ev;
-    for(auto &i:a){
-        cin>>i;
-        if(i&1){
-            od.pb(i);
-        }
-        else
-            ev.pb(i);
-    }
-    int lev = ev.size();
-    int lod = od.size();
-    sort(all(od));
-    sort(all(ev));
+void solve() {
+ string s; 
+ cin >> s;
+ int n = s.size();
+ if(n == 1) {
+  cout << 1 << endl;
+  return;
+ }
+ int l = n - 1, r = 0;
+ for(int i=n-1; i>=0; i--){
+  if(s[i] == '1') {
+   r = i;
+   break;
+  }
+ }
+//two pointer 
+ for(int i=0; i<n; i++) {
+  if(s[i] == '0') {
+   l = i;
+   break;
+  }
+ }
 
-    //alice bob both even
-    int al1 = 0, bb1 = 0, k = 0 , oo = 1 , ee = 0;
-    int ei = lev - 1, oi = lod -1;
-    while(1){
-        if(k%2 == 0 && oo == 1 && ei >= 0){
-            al1 += ev[ei];
-        }
-    }
+ cout << abs(l - r) + 1 << endl;
+ return;
+ 
 }
 signed main()
 {

@@ -55,37 +55,24 @@ const int N = 0;
 
 void solve()
 {
-    int n, k;
-    cin >> n >> k;
-    if (n == k && n == 1)
-    {
-        cout << "a" << endl;
-        return;
-    }
-    if (n == k && n != 1)
-    {
-        cout << -1 << endl;
-        return;
-    }
-    string res = "";
-    for (int i = 0; i < k; i++)
-        res = res + (char)('a' + i);
+    int n, x;
+    cin >> n >> x;
 
-    // Fill remaining n-k letters by
-    // repeating k letters again and again.
-    int count = 0;
-    string temp = res;
-    reverse(all(temp));
-    if (2 * k > n)
+    int min_len = 2 * x - 1;
+    if (n < min_len)
     {
         cout << -1 << endl;
         return;
     }
-    if (k != n / 2)
+
+    string res = string(n, 'a');
+
+    for (int i = 1; i < x; i++)
     {
-        res += 'a';
+        res[i] = 'a' + i;
+        res[n - i - 1] = 'a' + i;
     }
-    res += temp;
+
     cout << res << endl;
 }
 signed main()

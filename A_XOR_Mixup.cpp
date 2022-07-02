@@ -64,24 +64,7 @@ void solve()
         cin >> i;
     }
 
-    for (int i = 0; i < n; i++)
-    {
-        int xr = 0;
-        for (int j = 0; j < n; j++)
-        {
-            if (i != j)
-            {
-                xr = xr ^ a[j];
-            }
-        }
-        if (xr == a[i])
-        {
-            cout << a[i] << endl;
-            return;
-        }
-    }
-
-    cout << -1 << endl;
+    cout << a[0] << endl;
 }
 signed main()
 {

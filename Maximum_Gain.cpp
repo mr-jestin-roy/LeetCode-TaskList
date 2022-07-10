@@ -11,19 +11,21 @@ using namespace chrono;
     ios_base::sync_with_stdio(false); \
     cin.tie(NULL);                    \
     cout.tie(NULL)
-#define MOD 1000000007
-#define MOD1 998244353
-#define INF 1e18
-#define nline "\n"
 #define pb push_back
 #define ppb pop_back
-#define mp make_pair
-#define ff first
-#define ss second
-#define PI 3.141592653589793238462
-#define set_bits __builtin_popcountll
-#define sz(x) ((int)(x).size())
+#define pf push_front
+#define ppf pop_front
 #define all(x) (x).begin(), (x).end()
+#define uniq(v) (v).erase(unique(all(v)), (v).end())
+#define sz(x) (int)((x).size())
+#define fr first
+#define sc second
+#define pii pair<int, int>
+#define rep(i, a, b) for (int i = a; i < b; i++)
+#define mem1(a) memset(a, -1, sizeof(a))
+#define mem0(a) memset(a, 0, sizeof(a))
+#define ppc __builtin_popcount
+#define ppcll __builtin_popcountll
 
 typedef long long ll;
 typedef unsigned long long ull;
@@ -146,17 +148,40 @@ ll phin(ll n)
 } // O(sqrt(N))
 ll getRandomNumber(ll l, ll r) { return uniform_int_distribution<ll>(l, r)(rng); }
 /*--------------------------------------------------------------------------------------------------------------------------*/
+vector<int> Operate(vector<int> &arr, int n)
+{
+    vector<int> dp(n + 1), pref(n + 2), suff(n + 2);
 
+    rep(i, 0, n)
+    {
+        pref[i + 1] = pref[i] + arr[i];
+    }
+
+    for (int i = n - 1; i >= 0; i--)
+    {
+        suff[i + 1] = suff[i + 2] + arr[i];
+    }
+
+    rep(i, 1, n + 1)
+    {
+        // take i elements in total
+        rep(j, 0, i + 1)
+        {
+            // take j elements from front
+            dp[i] = max(dp[i], pref[j] + suff[n - (i - j) + 1]);
+        }
+    }
+    return dp;
+}
 void solve()
 {
     int n;
     cin >> n;
-    int sumA = 0, sumB = 0;
+
     vector<int> a(n);
     for (auto &i : a)
     {
         cin >> i;
-        sumA += i;
     }
     int m;
     cin >> m;
@@ -164,33 +189,22 @@ void solve()
     for (auto &j : b)
     {
         cin >> j;
-        sumB += j;
     }
     int k;
     cin >> k;
-    k = n + m - k;
-    int i, l, ans = 0, ansA, ansB, c;
-    int itr = 0;
-    int i1 = 0, i2 = n - 1;
-    int j1 = 0, j2 = m - 1;
+    vector<int> dp1 = Operate(a, n);
+    vector<int> dp2 = Operate(b, m);
 
-    for (l = 0; l <= k; l++)
+    int ans = 0;
+    rep(i, 0, k + 1)
     {
-        if (l > n || k - l > m)
-            continue;
+        // i questions answered from task A
+        // k - i questions answered from Task B
 
-        // base case
-        for (i = 0, c = 0; i < l; i++)
-            c += a[i];
-        ansA = c;
-        for (; i < n; i++)
-            c += a[i] - a[i - l], ansA = min(ansA, c);
-        for (i = 0, c = 0; i < k - l; i++)
-            c += b[i];
-        ansB = c;
-        for (; i < m; i++)
-            c += b[i] - b[i - k + l], ansB = min(ansB, c);
-        ans = max(ans, sumA + sumB - ansA - ansB);
+        if (i <= n && k - i <= m)
+        {
+            ans = max(ans, dp1[i] + dp2[k - i]);
+        }
     }
 
     cout << ans << endl;

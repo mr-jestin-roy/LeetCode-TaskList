@@ -26,6 +26,7 @@ using namespace chrono;
 #define mem0(a) memset(a, 0, sizeof(a))
 #define ppc __builtin_popcount
 #define ppcll __builtin_popcountll
+#define int long long
 
 typedef long long ll;
 typedef unsigned long long ull;
@@ -179,16 +180,16 @@ void solve()
     cin >> n;
 
     vector<int> a(n);
-    for (auto &i : a)
+    rep(i, 0, n)
     {
-        cin >> i;
+        cin >> a[i];
     }
     int m;
     cin >> m;
     vector<int> b(m);
-    for (auto &j : b)
+    rep(i, 0, m)
     {
-        cin >> j;
+        cin >> b[i];
     }
     int k;
     cin >> k;
@@ -210,7 +211,7 @@ void solve()
     cout << ans << endl;
 }
 
-int main()
+signed main()
 {
     fastio();
     int t;

@@ -1,5 +1,6 @@
 class Solution {
 public:
+    //TWO POINTER METHOD - O(N)
     int removeElement(vector<int>& nums, int val) {
         int left = 0 , right = nums.size() - 1;
         while(left <= right){
@@ -13,3 +14,8 @@ public:
         return left;
     }
 };
+//STANDARD C++ STL QUESTION
+// int removeElement(vector<int>& nums, int val) {
+//         nums.erase(remove(nums.begin(), nums.end(), val), nums.end());
+//         return nums.size();
+//     }

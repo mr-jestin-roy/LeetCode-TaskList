@@ -62,25 +62,39 @@ void solve()
     for (auto &i : s)
     {
         cin >> i;
-        mpp[i]++;
+        mpp[i] = 1;
     }
 
-    string ans(n, '0');
+    string ans = "";
 
-    for (int i = 0; i < s.size(); i++)
+    for (auto &it : s)
     {
-        for (int j = 0; j < s[i].size(); j++)
+        bool flag = false;
+        for (int j = 0; j < it.size(); ++j)
         {
-            int m = s[i].size();
-            string lh = s[i].substr(0, j);
-            string rh = s[i].substr(j + 1, n);
-            if (mpp.find(lh) != mpp.end() && mpp.find(rh) != mpp.end())
+            if (mpp[it.substr(0, j)] == 1 && mpp[it.substr(j, it.size())] == 1)
             {
-                // cout << "#" << s[i] << endl;
-                ans[i] = '1';
+                flag = true;
+                break;
             }
         }
+        ans += flag ? "1" : "0";
     }
+
+    // for (int i = 0; i < s.size(); i++)
+    // {
+    //     for (int j = 0; j < s[i].size(); j++)
+    //     {
+    //         int m = s[i].size();
+    //         string lh = s[i].substr(0, j);
+    //         string rh = s[i].substr(j + 1, n);
+    //         if (mpp.find(lh) != mpp.end() && mpp.find(rh) != mpp.end())
+    //         {
+    //             // cout << "#" << s[i] << endl;
+    //             ans[i] = '1';
+    //         }
+    //     }
+    // }
 
     cout << ans << endl;
 }

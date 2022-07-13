@@ -27,10 +27,7 @@ public:
         while(!q.empty()){
             leftNode = q.front(); q.pop();
             rightNode = q.front(); q.pop();
-            // if (NULL == leftNode->val && NULL == rightNode->val)
-            //     continue;
-            // if (!leftNode || !rightNode)
-            //     return false;
+            
             //both nodes exists , but have different values
             if(leftNode->val != rightNode->val)  
                 return false;

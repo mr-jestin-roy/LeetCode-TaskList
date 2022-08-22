@@ -166,14 +166,14 @@ void solve()
         auto itr = upper_bound(all(b), 2 * a[i]);
         if (itr == b.begin())
         {
-            cout << -1 << endl;
+            cout << "-1 ";
         }
         else
         {
             --itr;
             if (itr == b.begin())
             {
-                cout << -1 << endl;
+                cout << "-1 ";
             }
             else if (*itr == a[i])
             {

@@ -66,7 +66,7 @@ void solve()
     {
         cin >> i;
     }
-    // Two Pointer approach instead of lower_bound stl function
+    //Two Pointer approach instead of lower_bound stl function
     for (int i = 0, j = 0; i < n; i++)
     {
         while (b[j] < a[i])

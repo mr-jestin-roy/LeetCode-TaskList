@@ -1,0 +1,1 @@
+{"name":"Local: Good_Pairs CodeChef","url":"d:\\LeetCode-TaskList\\Good_Pairs CodeChef.cpp","tests":[{"id":1662802653232,"input":"5\n2\n5 9\n5\n1 5 5 5 9\n8\n2 5 5 2 9 9 9 12\n4\n12 12 18 18\n5\n12 15 10 5 9","output":"0\n3\n5\n2\n0"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\LeetCode-TaskList\\Good_Pairs CodeChef.cpp","group":"local","local":true}

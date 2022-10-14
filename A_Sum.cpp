@@ -55,8 +55,10 @@ const int N = 0;
 
 void solve()
 {
+    // easy question
     int a, b, c;
     cin >> a >> b >> c;
+    // basic arthimatic problem
     if (a + b + c == 2 * max({a, b, c}))
     {
         cout << "YES" << endl;

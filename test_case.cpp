@@ -55,7 +55,7 @@ int main() {
         cout << endl;
     }
     
-    // For this specific test case, we know:
+    // For this specific test case, we know
     // - Only vertex 1 and 5 are reachable
     // - Vertex 1 is reachable as the starting point
     // - Vertex 5 is reachable because we can go from 1->2->5 in an odd number of steps

@@ -1,0 +1,7 @@
+3
+4
+ABCC
+5
+BAABB
+2
+BA 

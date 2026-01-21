@@ -78,10 +78,12 @@ Tech Interview Preparation Resources
 ## String
 |  |
 | ------- |
+| [1047-remove-all-adjacent-duplicates-in-string](https://github.com/mr-jestin-roy/LeetCode-TaskList/tree/master/1047-remove-all-adjacent-duplicates-in-string) |
 | [2696-minimum-string-length-after-removing-substrings](https://github.com/mr-jestin-roy/LeetCode-TaskList/tree/master/2696-minimum-string-length-after-removing-substrings) |
 ## Stack
 |  |
 | ------- |
+| [1047-remove-all-adjacent-duplicates-in-string](https://github.com/mr-jestin-roy/LeetCode-TaskList/tree/master/1047-remove-all-adjacent-duplicates-in-string) |
 | [2696-minimum-string-length-after-removing-substrings](https://github.com/mr-jestin-roy/LeetCode-TaskList/tree/master/2696-minimum-string-length-after-removing-substrings) |
 ## Simulation
 |  |

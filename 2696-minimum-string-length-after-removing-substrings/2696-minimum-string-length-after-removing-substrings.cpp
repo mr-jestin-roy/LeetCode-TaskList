@@ -19,22 +19,38 @@ public:
 
 
     // Better approach: Stack solution: TC -> O(n), SC -> O(n)
-    int minLength(string s) {
-        stack<char> st;
-        for(int i=0; s[i] != '\0'; i++){
-            // if the stack is not empty and the top of the stack forms a valid pair with the current character
-            if(!st.empty() && (st.top() == 'A' || st.top() == 'C') && st.top() == s[i] - 1){
-                // pop thee stack if you find a valid pair (A-B or C-D)
-                st.pop();
+    // int minLength(string s) {
+    //     stack<char> st;
+    //     for(int i=0; s[i] != '\0'; i++){
+    //         // if the stack is not empty and the top of the stack forms a valid pair with the current character
+    //         if(!st.empty() && (st.top() == 'A' || st.top() == 'C') && st.top() == s[i] - 1){
+    //             // pop thee stack if you find a valid pair (A-B or C-D)
+    //             st.pop();
+    //         } else{
+    //             // push the current char onto the stack if no pair is found
+    //             st.push(s[i]);
+    //         }
+    //     }
+
+    //     // the remainging characters in the stack respresent the minimum length of modified string
+    //     return st.size();
+    // }
+
+    // For the optimal approach, try two pointer inpace modification: TC: O(n), but the SC: O(1) in c++
+    int minLength(string s){
+        int writer = 0, reader = 0;
+        while(reader < s.size()){
+            s[writer] = s[reader]; // copy the current character at the reader position
+
+            if(writer > 0 && (s[writer] == 'B' || s[writer] == 'D') && s[writer] == s[writer - 1] + 1){
+                writer--; // decrement writer to remove the pair from the modified string
             } else{
-                // push the current char onto the stack if no pair is found
-                st.push(s[i]);
+                writer++;
             }
+
+            reader++;
         }
-
-        // the remainging characters in the stack respresent the minimum length of modified string
-        return st.size();
+        //  the final writer position represents the minimum length of the string after removing all valid pairs
+        return writer;
     }
-
-    
 };

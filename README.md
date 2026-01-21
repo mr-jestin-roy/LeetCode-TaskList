@@ -72,3 +72,19 @@ Tech Interview Preparation Resources
 * codeNcode
 
 
+
+<!---LeetCode Topics Start-->
+# LeetCode Topics
+## String
+|  |
+| ------- |
+| [2696-minimum-string-length-after-removing-substrings](https://github.com/mr-jestin-roy/LeetCode-TaskList/tree/master/2696-minimum-string-length-after-removing-substrings) |
+## Stack
+|  |
+| ------- |
+| [2696-minimum-string-length-after-removing-substrings](https://github.com/mr-jestin-roy/LeetCode-TaskList/tree/master/2696-minimum-string-length-after-removing-substrings) |
+## Simulation
+|  |
+| ------- |
+| [2696-minimum-string-length-after-removing-substrings](https://github.com/mr-jestin-roy/LeetCode-TaskList/tree/master/2696-minimum-string-length-after-removing-substrings) |
+<!---LeetCode Topics End-->

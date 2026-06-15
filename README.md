@@ -76,19 +76,31 @@ Tech Interview Preparation Resources
 <!---LeetCode Topics Start-->
 # LeetCode Topics
 ## String
-|  |
-| ------- |
+| Problem Name | Difficulty |
+| ------- | ------- |
 | [1047-remove-all-adjacent-duplicates-in-string](https://github.com/mr-jestin-roy/LeetCode-TaskList/tree/master/1047-remove-all-adjacent-duplicates-in-string) |
 | [1209-remove-all-adjacent-duplicates-in-string-ii](https://github.com/mr-jestin-roy/LeetCode-TaskList/tree/master/1209-remove-all-adjacent-duplicates-in-string-ii) |
 | [2696-minimum-string-length-after-removing-substrings](https://github.com/mr-jestin-roy/LeetCode-TaskList/tree/master/2696-minimum-string-length-after-removing-substrings) |
 ## Stack
-|  |
-| ------- |
+| Problem Name | Difficulty |
+| ------- | ------- |
 | [1047-remove-all-adjacent-duplicates-in-string](https://github.com/mr-jestin-roy/LeetCode-TaskList/tree/master/1047-remove-all-adjacent-duplicates-in-string) |
 | [1209-remove-all-adjacent-duplicates-in-string-ii](https://github.com/mr-jestin-roy/LeetCode-TaskList/tree/master/1209-remove-all-adjacent-duplicates-in-string-ii) |
 | [2696-minimum-string-length-after-removing-substrings](https://github.com/mr-jestin-roy/LeetCode-TaskList/tree/master/2696-minimum-string-length-after-removing-substrings) |
 ## Simulation
-|  |
-| ------- |
+| Problem Name | Difficulty |
+| ------- | ------- |
 | [2696-minimum-string-length-after-removing-substrings](https://github.com/mr-jestin-roy/LeetCode-TaskList/tree/master/2696-minimum-string-length-after-removing-substrings) |
+## Array
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0419-battleships-in-a-board](https://github.com/mr-jestin-roy/LeetCode-TaskList/tree/main/0419-battleships-in-a-board/) | Medium |
+## Depth-First Search
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0419-battleships-in-a-board](https://github.com/mr-jestin-roy/LeetCode-TaskList/tree/main/0419-battleships-in-a-board/) | Medium |
+## Matrix
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0419-battleships-in-a-board](https://github.com/mr-jestin-roy/LeetCode-TaskList/tree/main/0419-battleships-in-a-board/) | Medium |
 <!---LeetCode Topics End-->

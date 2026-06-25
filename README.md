@@ -95,6 +95,7 @@ Tech Interview Preparation Resources
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0419-battleships-in-a-board](https://github.com/mr-jestin-roy/LeetCode-TaskList/tree/main/0419-battleships-in-a-board/) | Medium |
+| [1838-frequency-of-the-most-frequent-element](https://github.com/mr-jestin-roy/LeetCode-TaskList/tree/main/1838-frequency-of-the-most-frequent-element/) | Medium |
 ## Depth-First Search
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -103,4 +104,24 @@ Tech Interview Preparation Resources
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0419-battleships-in-a-board](https://github.com/mr-jestin-roy/LeetCode-TaskList/tree/main/0419-battleships-in-a-board/) | Medium |
+## Binary Search
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [1838-frequency-of-the-most-frequent-element](https://github.com/mr-jestin-roy/LeetCode-TaskList/tree/main/1838-frequency-of-the-most-frequent-element/) | Medium |
+## Greedy
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [1838-frequency-of-the-most-frequent-element](https://github.com/mr-jestin-roy/LeetCode-TaskList/tree/main/1838-frequency-of-the-most-frequent-element/) | Medium |
+## Sliding Window
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [1838-frequency-of-the-most-frequent-element](https://github.com/mr-jestin-roy/LeetCode-TaskList/tree/main/1838-frequency-of-the-most-frequent-element/) | Medium |
+## Sorting
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [1838-frequency-of-the-most-frequent-element](https://github.com/mr-jestin-roy/LeetCode-TaskList/tree/main/1838-frequency-of-the-most-frequent-element/) | Medium |
+## Prefix Sum
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [1838-frequency-of-the-most-frequent-element](https://github.com/mr-jestin-roy/LeetCode-TaskList/tree/main/1838-frequency-of-the-most-frequent-element/) | Medium |
 <!---LeetCode Topics End-->

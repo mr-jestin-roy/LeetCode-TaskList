@@ -81,6 +81,7 @@ Tech Interview Preparation Resources
 | [1047-remove-all-adjacent-duplicates-in-string](https://github.com/mr-jestin-roy/LeetCode-TaskList/tree/master/1047-remove-all-adjacent-duplicates-in-string) |
 | [1209-remove-all-adjacent-duplicates-in-string-ii](https://github.com/mr-jestin-roy/LeetCode-TaskList/tree/master/1209-remove-all-adjacent-duplicates-in-string-ii) |
 | [2696-minimum-string-length-after-removing-substrings](https://github.com/mr-jestin-roy/LeetCode-TaskList/tree/master/2696-minimum-string-length-after-removing-substrings) |
+| [3348-smallest-divisible-digit-product-ii](https://github.com/mr-jestin-roy/LeetCode-TaskList/tree/main/3348-smallest-divisible-digit-product-ii/) | Hard |
 ## Stack
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -112,6 +113,7 @@ Tech Interview Preparation Resources
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [1838-frequency-of-the-most-frequent-element](https://github.com/mr-jestin-roy/LeetCode-TaskList/tree/main/1838-frequency-of-the-most-frequent-element/) | Medium |
+| [3348-smallest-divisible-digit-product-ii](https://github.com/mr-jestin-roy/LeetCode-TaskList/tree/main/3348-smallest-divisible-digit-product-ii/) | Hard |
 ## Sliding Window
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -124,4 +126,16 @@ Tech Interview Preparation Resources
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [1838-frequency-of-the-most-frequent-element](https://github.com/mr-jestin-roy/LeetCode-TaskList/tree/main/1838-frequency-of-the-most-frequent-element/) | Medium |
+## Math
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [3348-smallest-divisible-digit-product-ii](https://github.com/mr-jestin-roy/LeetCode-TaskList/tree/main/3348-smallest-divisible-digit-product-ii/) | Hard |
+## Backtracking
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [3348-smallest-divisible-digit-product-ii](https://github.com/mr-jestin-roy/LeetCode-TaskList/tree/main/3348-smallest-divisible-digit-product-ii/) | Hard |
+## Number Theory
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [3348-smallest-divisible-digit-product-ii](https://github.com/mr-jestin-roy/LeetCode-TaskList/tree/main/3348-smallest-divisible-digit-product-ii/) | Hard |
 <!---LeetCode Topics End-->

@@ -95,6 +95,7 @@ Tech Interview Preparation Resources
 ## Array
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [0221-maximal-square](https://github.com/mr-jestin-roy/LeetCode-TaskList/tree/main/0221-maximal-square/) | Medium |
 | [0419-battleships-in-a-board](https://github.com/mr-jestin-roy/LeetCode-TaskList/tree/main/0419-battleships-in-a-board/) | Medium |
 | [1838-frequency-of-the-most-frequent-element](https://github.com/mr-jestin-roy/LeetCode-TaskList/tree/main/1838-frequency-of-the-most-frequent-element/) | Medium |
 ## Depth-First Search
@@ -104,6 +105,7 @@ Tech Interview Preparation Resources
 ## Matrix
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [0221-maximal-square](https://github.com/mr-jestin-roy/LeetCode-TaskList/tree/main/0221-maximal-square/) | Medium |
 | [0419-battleships-in-a-board](https://github.com/mr-jestin-roy/LeetCode-TaskList/tree/main/0419-battleships-in-a-board/) | Medium |
 ## Binary Search
 | Problem Name | Difficulty |
@@ -138,4 +140,8 @@ Tech Interview Preparation Resources
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [3348-smallest-divisible-digit-product-ii](https://github.com/mr-jestin-roy/LeetCode-TaskList/tree/main/3348-smallest-divisible-digit-product-ii/) | Hard |
+## Dynamic Programming
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0221-maximal-square](https://github.com/mr-jestin-roy/LeetCode-TaskList/tree/main/0221-maximal-square/) | Medium |
 <!---LeetCode Topics End-->

@@ -3,6 +3,13 @@ Submitting my daily Leetcode solutions and Practice rounds updates.
 # Interview-Prep
 Tech Interview Preparation Resources
 ***You journey of resource hunting ends here!!***
+
+# About Me
+I started competitive programming back in 2019 (pre-ChatGPT, pre-AI era) purely out of interest, while preparing to interview for FAANG companies in the India job market. My competitive programming journey has spanned Google Kickstart challenges, Codeforces, CodeChef, AtCoder, and ICPC regionals — grinding Data Structures & Algorithms (DSA) contests long before AI coding assistants existed.
+
+What began as interview prep turned into a genuine passion. Over time I started teaching juniors in college coding clubs and placement drives, and went on to work as a Teaching Assistant for Data Structures & Algorithms at CodingNinjas, Delhi — mentoring top engineering students from DTU (Delhi Technological University), IIT Delhi, IPU, and IIIT Delhi, many of whom went on to bag placements at top tech firms.
+
+Thanks to this deep-rooted interest in DSA and competitive programming from 2019 to present, I've been outreached and interviewed by Google, Amazon, and Microsoft. This repository is a running log of that journey — Codeforces virtual contests, LeetCode daily practice, CodeChef and AtCoder problems, ICPC-style problem sets, and structured DSA/interview-prep resources for anyone following a similar FAANG interview preparation path from India.
 # Books
 * Books wise : Cormen (CRLS) = Intro to Algorithms available in the library , ( PDF Uploaded above )
 * Cracking the coding interviews 
